@@ -7,6 +7,10 @@
   align-items: center;
 }
 
+.container-bg {
+  background-color: #a3ceff;
+}
+
 .main {
   padding: 5rem 0;
   flex: 1;
