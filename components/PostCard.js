@@ -1,10 +1,14 @@
-function Post({ title, thumbnail, body, updatedAt, slug }) {
-  console.log({title, thumbnail, body, updatedAt, slug});
+import Link from 'next/link'
+
+function PostCard({ title, thumbnail, body, updatedAt, slug }) {
   return (
     <div className="container">
-      <a href={slug}>
+      <Link
+        href={{ pathname: '/post', query: { slug:slug } }}
+        passHref={true}
+      >
         <img className="img" alt={thumbnail.fields.file.fileName} src={thumbnail.fields.file.url} />
-      </a>
+      </Link>
       <div className="text">
         <h2>{title}</h2>
         <h4>{updatedAt}</h4>
@@ -52,4 +56,4 @@ function Post({ title, thumbnail, body, updatedAt, slug }) {
   )
 }
 
-export default Post
+export default PostCard

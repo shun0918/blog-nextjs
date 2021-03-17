@@ -1,38 +1,30 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
-import Post from '../components/post'
+import PostCard from '../components/PostCard'
 import styles from '../styles/Home.module.css'
-import ContentfulCreateClient from './api/ContentfulCreateClient.js'
-
-const client = ContentfulCreateClient();
+import { getAllPosts, getPostBySlug, getMorePosts, parsePostSlug, parsePostSlugEntries, getAllPostsWithSlug } from '../lib/contentful/contentful'
 
 export default function Home() {
-  async function fetchEntries() {
-    const entries = await client.getEntries()
-    if (entries.items) return entries.items
-    console.log(`Error getting Entries for ${contentType.name}.`);
-  }
   const [posts, setPosts] = useState([])
-
   useEffect(() => {
     async function getPosts() {
-      const allPosts = await fetchEntries()
+      const allPosts = await getAllPosts()
       setPosts([...allPosts])
     }
     getPosts()
   }, [])
-  
+
   return (
     <div className={`${styles.container} ${styles["container-bg"]}`}>
       <Head>
-        <title>Create Next App</title>
+        <title>Web developer blog | kabosu</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         {posts.length > 0
           ? posts.map((p) => (
-              <Post
+              <PostCard
                 key={p.fields.title}
                 thumbnail={p.fields.thumbnail}
                 title={p.fields.title}
