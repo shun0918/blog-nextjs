@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import PostCard from '../components/PostCard'
 import styles from '../styles/Home.module.css'
-import { getAllPosts, getPostBySlug, getMorePosts, parsePostSlug, parsePostSlugEntries, getAllPostsWithSlug } from '../lib/contentful/contentful'
+import { getAllPosts } from '../lib/contentful/contentful'
 
 export default function Home() {
   const [posts, setPosts] = useState([])
@@ -35,17 +35,6 @@ export default function Home() {
             ))
           : null}
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
     </div>
   )
 }

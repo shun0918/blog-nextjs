@@ -13,32 +13,29 @@ export default function Post() {
   useEffect(() => {
     async function getPost() {
       const postData = await getPostBySlug(slug)
-      console.log(postData)
-      setPost({...postData})
+      setPost(postData)
+      console.log(postData);
     }
-    getPost().then(() => {
-      console.log("ss",post);
-    })
-  }, [slug])
+    getPost()
+  }, [router, slug])
 
   return (
     <div>
       <Head>
-        {/* <title>{ post.fields.title }</title> */}
-        <title>test</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>{"fields" in post ? post.fields.title : "loading..."}</title>
       </Head>
 
       <main className={styles.main}>
-        <p>aa</p>
-        {/* <PostContent 
-          title={post.fields.title}
-          thumbnail={post.fields.thumbnail}
-          body={post.fields.body}
-          publishedAt={post.fields.publishedAt}
-          updatedAt={post.fields.updatedAt}
-          slug={post.fields.slug}
-        /> */}
+        {"fields" in post
+          ? <PostContent 
+              title={post.fields.title}
+              thumbnail={post.fields.thumbnail}
+              body={post.fields.body}
+              publishedAt={post.fields.publishedAt}
+              updatedAt={post.fields.updatedAt}
+              slug={post.fields.slug}
+            />
+          : null }
       </main>
     </div>
   )
