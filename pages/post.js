@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import styles from '../styles/Home.module.css'
 import PostContent from '../components/postContent'
 import { useEffect, useState } from 'react'
-import { getPostBySlug } from '../lib/contentful/contentful';
+import { fetchPostBySlug } from '../lib/contentful/contentful';
 
 export default function Post() {
   const router = useRouter()
@@ -12,7 +12,7 @@ export default function Post() {
   // const slug = 
   useEffect(() => {
     async function getPost() {
-      const postData = await getPostBySlug(slug)
+      const postData = await fetchPostBySlug(slug)
       setPost(postData)
       console.log(postData);
     }

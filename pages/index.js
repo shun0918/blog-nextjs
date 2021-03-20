@@ -2,13 +2,13 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import PostCard from '../components/PostCard'
 import styles from '../styles/Home.module.css'
-import { getAllPosts } from '../lib/contentful/contentful'
+import { fetchAllPosts } from '../lib/contentful/contentful'
 
 export default function Home() {
   const [posts, setPosts] = useState([])
   useEffect(() => {
     async function getPosts() {
-      const allPosts = await getAllPosts()
+      const allPosts = await fetchAllPosts()
       setPosts([...allPosts])
     }
     getPosts()
