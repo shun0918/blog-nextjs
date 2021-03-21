@@ -22,18 +22,35 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        {posts.length > 0
-          ? posts.map((p) => (
-              <PostCard
-                key={p.fields.title}
-                thumbnail={p.fields.thumbnail}
-                title={p.fields.title}
-                slug={p.fields.slug}
-                publishedAt={p.fields.publishedAt}
-                updatedAt={p.fields.updatedAt}
-              />
-            ))
-          : null}
+        <h1 className="main__title">記事一覧</h1>
+        <div className="main__list">
+          {posts.length > 0
+            ? posts.map((p) => (
+                <PostCard
+                  key={p.fields.title}
+                  thumbnail={p.fields.thumbnail}
+                  title={p.fields.title}
+                  slug={p.fields.slug}
+                  publishedAt={p.fields.publishedAt}
+                  updatedAt={p.fields.updatedAt}
+                />
+              ))
+            : null}
+        </div>
+        <style jsx>{`
+          .main__title {
+            text-align: center;
+            font-size: 24px;
+          }
+          .main__list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 2rem;
+            column-gap: 2rem;
+            grid-row-gap: 3rem;
+            row-gap: 3rem;
+          }
+        `}</style>
       </main>
     </div>
   )

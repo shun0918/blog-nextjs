@@ -5,6 +5,12 @@ body {
   font-family: YakuHanJP_Narrow,"Noto Sans JP","Noto Sans CJK JP","Noto Sans Japanese","Hiragino Kaku Gothic ProN","ヒラギノ角ゴ ProN W3","ヒラギノ角ゴシック","Hiragino Sans","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
 }
 
+body {
+  word-break: normal;
+  word-wrap: anywhere;
+  line-break: strict;
+}
+
 a {
   color: inherit;
   text-decoration: none;
