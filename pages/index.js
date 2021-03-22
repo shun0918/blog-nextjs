@@ -41,6 +41,7 @@ export default function Home() {
           .main__title {
             text-align: center;
             font-size: 24px;
+            padding: 3rem 0;
           }
           .main__list {
             display: grid;

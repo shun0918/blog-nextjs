@@ -3,15 +3,17 @@ import Link from 'next/link'
 function PostCard({ title, thumbnail, body, updatedAt, slug }) {
   return (
     <div className="post-card">
-      <div className="post__eyecatch">
+      <div className="post-card__eyecatch--flame">
         <Link
           href={{ pathname: '/post', query: { slug:slug } }}
           passHref={true}
         >
-          <img className="img" alt={thumbnail.fields.file.fileName} src={thumbnail.fields.file.url} width="320" height="160"/>
+          <a className="post-card__eyecatch--link">
+            <img className="img" alt={thumbnail.fields.file.fileName} src={thumbnail.fields.file.url} width="280" height="160"/>
+          </a>
         </Link>
       </div>
-      <h2>
+      <h2 className="post-card__title">
         <Link
           href={{ pathname: '/post', query: { slug:slug } }}
           passHref={true}
@@ -22,21 +24,42 @@ function PostCard({ title, thumbnail, body, updatedAt, slug }) {
       <style jsx>{`
         .post-card {
           position: relative;
-          padding: 2rem;
+          padding: 1rem 1rem;
           height: 280px;
           border-radius: 50px;
-          background: #D7D6DE;
-          box-shadow:  20px 20px 60px #b7b6bd,
-                      -20px -20px 60px #f7f6ff;
-          overflow: hidden;
-        }
-        .post-card__eyecatch {
           border-radius: 50px;
-          background: #D7D6DE;
-          box-shadow:  20px 20px 60px #b7b6bd,
-                      -20px -20px 60px #f7f6ff;
+          border-radius: 50px;
+          background: #F4E2CA;
+          box-shadow:  32px 32px 64px #cfc0ac,
+                      -32px -32px 64px #ffffe8;
           overflow: hidden;
         }
+        .post-card__eyecatch--flame {
+        }
+        .post-card__eyecatch--link {
+          border-radius: 30px;
+          display: block;
+          overflow: hidden;
+          position: relative;
+        }
+        .post-card__eyecatch--link:before {
+          content: '';
+          display: block;
+          padding-top: 50%;
+        }
+        .post-card__eyecatch--link img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          object-position: center;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .post-card__title {
+          color: #232323;
+        }
+        
         a {
           border-bottom: none;
         }
@@ -58,12 +81,6 @@ function PostCard({ title, thumbnail, body, updatedAt, slug }) {
           font-size: 16px;
           font-weight: 500;
           margin-top: 8px;
-        }
-        img {
-          max-width: 100%;
-          object-fit: cover;
-          object-position: center;
-          filter: brightness(50%);
         }
       `}</style>
     </div>
