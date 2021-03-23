@@ -1,6 +1,7 @@
 import Link from 'next/link'
+import morphism from '../styles/neumorphism.module.css'
 
-function PostCard({ title, thumbnail, body, updatedAt, slug }) {
+function PostCard({ title, thumbnail, body, publishedAt ,updatedAt, slug }) {
   return (
     <div className="post-card">
       <div className="post-card__eyecatch--flame">
@@ -21,23 +22,21 @@ function PostCard({ title, thumbnail, body, updatedAt, slug }) {
         {title}
         </Link>
       </h2>
+      <p className="datetime">投稿日:<time>{publishedAt}</time></p>
       <style jsx>{`
         .post-card {
           position: relative;
-          padding: 1rem 1rem;
-          height: 280px;
-          border-radius: 50px;
-          border-radius: 50px;
-          border-radius: 50px;
+          padding: 0.75rem;
+          border-radius: 30px;
           background: #F4E2CA;
-          box-shadow:  32px 32px 64px #cfc0ac,
-                      -32px -32px 64px #ffffe8;
+          box-shadow:  9px 9px 30px #c8b9a6,
+                      -9px -9px 30px #ffffee;
           overflow: hidden;
         }
         .post-card__eyecatch--flame {
         }
         .post-card__eyecatch--link {
-          border-radius: 30px;
+          border-radius: 20px;
           display: block;
           overflow: hidden;
           position: relative;
@@ -55,32 +54,22 @@ function PostCard({ title, thumbnail, body, updatedAt, slug }) {
           position: absolute;
           top: 0;
           left: 0;
+          right: 0;
+          left: 0;
         }
         .post-card__title {
           color: #232323;
-        }
-        
-        a {
-          border-bottom: none;
-        }
-        a:hover {
-          border-bottom: none;
+          font-size: 1rem;
+          margin-top: 1rem
         }
         .text {
           margin-top: -160px;
           padding: 16px;
           position: absolute;
         }
-        h2 {
-          color: #000;
-          font-size: 16px;
-          margin-bottom: 0;
-        }
-        h4 {
-          color: rgba(255, 255, 255, 0.8);
-          font-size: 16px;
-          font-weight: 500;
-          margin-top: 8px;
+        .datetime {
+          font-size: 0.75rem;
+          margin: 0.5rem auto 1rem;
         }
       `}</style>
     </div>
