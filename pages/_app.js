@@ -1,3 +1,4 @@
+import '../styles/destyle.css';
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
