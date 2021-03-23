@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import PostCard from '../components/PostCard'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 import styles from '../styles/Home.module.css'
 import { fetchAllPosts } from '../lib/contentful/contentful'
 
@@ -56,6 +57,8 @@ export default function Home() {
           }
         `}</style>
       </main>
+
+      <Footer />
     </div>
   )
 }
