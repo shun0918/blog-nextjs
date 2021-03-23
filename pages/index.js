@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import PostCard from '../components/PostCard'
+import Header from '../components/Header'
 import styles from '../styles/Home.module.css'
 import { fetchAllPosts } from '../lib/contentful/contentful'
 
@@ -20,6 +21,8 @@ export default function Home() {
         <title>Web developer blog | kabosu</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      
+      <Header />
 
       <main className={styles.main}>
         <h1 className="main__title">記事一覧</h1>
