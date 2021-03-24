@@ -1,0 +1,10 @@
+.footer {
+  padding: 25px 0;
+  background: var(--c-primary);
+  box-shadow:  9px 9px 30px var(--c-primary-darker),
+              -9px -9px 30px var(--c-primary-lighter);
+}
+.content-info {
+  margin: 0 auto;
+  text-align: center;
+}

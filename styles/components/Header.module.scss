@@ -1,0 +1,40 @@
+@import 'base/variables';
+
+.header {
+  position: relative;
+  height: $header-height;
+  width: 100vw;
+}
+.grobal-nav {
+  background: var(--c-primary);
+  box-shadow: 10px 10px 20px var(--c-primary-darker),
+              -10px -10px 20px var(--c-primary-lighter);
+  position: fixed;
+  top:0;
+  left:0;
+  z-index:1000;
+  width: 100%;
+
+  &__inner {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    height: 50px;
+  }
+
+  &__logo {
+    left: 50%;
+    top: 50%;
+    margin:0;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 20px;
+    color: var(--c-gray);
+    
+    &--link {
+      display: block;
+    }
+  }
+}
