@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import morphism from '../styles/neumorphism.module.css'
 
 function PostCard({ title, thumbnail, body, publishedAt ,updatedAt, slug }) {
   return (
