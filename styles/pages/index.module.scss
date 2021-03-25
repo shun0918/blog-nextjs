@@ -3,18 +3,18 @@
 .main {
   margin: 0 auto;
   padding: 5rem 0;
+}
 
 .container {
   @include container;
 }
 
-}
 
 .posts {
   &__title {
     text-align: center;
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 300;
   }
 
   &__list {
@@ -25,5 +25,18 @@
     column-gap: 2rem;
     grid-row-gap: 3rem;
     row-gap: 3rem;
+    
+    @include mq(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include mq(md) {
+      display: grid;
+      grid-template-columns: minmax(auto, 100%);
+    }
+
+    @include mq(sm) {
+      padding: 0 4%;
+    }
   }
 }
