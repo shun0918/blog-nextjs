@@ -1,3 +1,4 @@
+$header-height: 50px;
 $breakpoints: (
   'sm': 576px,
   'md': 768px,
@@ -11,11 +12,19 @@ $breakpoints: (
   }
 }
 
-$header-height: 50px;
+@mixin drop-shadow($size:30px) {
+  $p: ($size * 0.3);
+  background: var(--c-primary);
+  box-shadow:  $p $p $size var(--c-primary-darker),
+              (-$p) (-$p) $size var(--c-primary-lighter);
+}
+
 
 @mixin container() {
   margin-left: auto;
   margin-right: auto;
+  padding-left: 4%;
+  padding-right: 4%;
   max-width: #{map-get($breakpoints, 'lg')};
 
   @include mq('lg') {
