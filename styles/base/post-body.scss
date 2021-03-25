@@ -1,0 +1,18 @@
+@mixin post-body {
+  h2 {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    color: --c-text-h;
+  }
+  h3 {
+    font-size: 1.3rem;
+    margin-top: 1rem 0;
+  }
+  p {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    :first-child {
+      margin-top: 0;
+    }
+  }
+}
