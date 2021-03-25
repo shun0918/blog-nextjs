@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router';
-import styles from '../styles/pages/post.module.scss'
-import PostContent from '../components/postContent'
 import { useEffect, useState } from 'react'
 import { fetchPostBySlug } from '../lib/contentful/contentful';
+import PostContent from '../components/PostContent'
+import styles from '../styles/pages/post.module.scss'
 
 export default function Post() {
   const router = useRouter()
@@ -20,12 +20,13 @@ export default function Post() {
   }, [router, slug])
 
   return (
-    <div>
+    <>
       <Head>
         <title>{"fields" in post ? post.fields.title : "loading..."}</title>
       </Head>
 
       <main className={styles.main}>
+        <div className={styles.container}>
         {"fields" in post
           ? <PostContent 
               title={post.fields.title}
@@ -36,7 +37,8 @@ export default function Post() {
               slug={post.fields.slug}
             />
           : null }
+        </div>
       </main>
-    </div>
+    </>
   )
 }

@@ -1,34 +1,20 @@
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import styles from '../styles/components/PostContent.module.scss'
 
 function PostContent({ title, thumbnail, body, publishedAt, updatedAt, slug }) {
   console.log(body);
   
   return (
-    <div className={"container"}>
-      <h1>{ title }</h1>
-      <small>投稿日{" "}{publishedAt}</small>
-      <div>
-        <img className="img" alt={thumbnail.fields.file.fileName} src={thumbnail.fields.file.url} />
+    <article className={styles.content}>
+      <div className={styles.content__head}>
+        <h1 className={styles.content__title}>{ title }</h1>
+        <small className={styles.content__date}>投稿日:{" "}{publishedAt}</small>
+        <img className={styles.content__eyecatch}　alt={thumbnail.fields.file.fileName} src={thumbnail.fields.file.url} width="640" height="360"/>
       </div>
-      <div className="contentBody">
+      <div className={styles.content__body}>
         {documentToReactComponents(body)}
       </div>
-      <div>
-        
-      </div>
-      <style jsx>
-        {`.container {
-          max-width:1024px;
-          margin: 0 auto;
-          padding: auto 5%;
-
-        }
-        .container .img {
-          max-width:100%;
-        }
-        `}
-      </style>
-    </div>
+    </article>
   )
 }
 
