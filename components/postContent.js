@@ -7,9 +7,9 @@ function PostContent({ title, thumbnail, body, publishedAt, updatedAt, slug }) {
   return (
     <article className={styles.content}>
       <div className={styles.content__head}>
-        <h1 className={styles.content__title}>{ title }</h1>
-        <small className={styles.content__date}>投稿日:{" "}{publishedAt}</small>
         <img className={styles.content__eyecatch}　alt={thumbnail.fields.file.fileName} src={thumbnail.fields.file.url} width="640" height="360"/>
+        <h1 className={styles.content__title}>{ title }</h1>
+        <p className={styles.content__date}>投稿日:{" "}<date>{publishedAt}</date></p>
       </div>
       <div className={styles.content__body}>
         {documentToReactComponents(body)}

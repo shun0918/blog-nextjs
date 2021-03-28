@@ -6,22 +6,21 @@
   margin: 0 auto;
   padding:3rem 0;
 
-  &__head {
-    
-  }
-
   &__title {
     font-size: 1.8rem;
+    line-height: 1.5;
     font-weight: 600;
   }
-
+  
   &__date {
-    margin-top: 0.5rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    color: var(--c-text-h);
+    margin-top:0.5rem;
   }
-
+  
   &__eyecatch {
-    width: 100%;    
+    width: 100%;
+    margin-bottom: 1rem;
   }
 
   &__body {
