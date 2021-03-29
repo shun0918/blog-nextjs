@@ -1,18 +1,22 @@
 @mixin post-body {
+  line-height: 1.5;
+  margin-top: 1.5rem;
   h2 {
     font-size: 2rem;
-    margin: 1rem 0;
-    color: --c-text-h;
+    margin: 2rem 0 1.5rem;
+    // color: var(--c-text-h);
   }
   h3 {
-    font-size: 1.3rem;
-    margin-top: 1rem 0;
+    font-size: 1.5rem;
+    margin: 2rem 0 1.5rem;
   }
   p {
     font-size: 1rem;
-    margin-top: 1.5rem;
     :first-child {
       margin-top: 0;
     }
+  }
+  code {
+    white-space: pre;
   }
 }
