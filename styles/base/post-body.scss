@@ -1,27 +1,67 @@
 @mixin post-body {
-  line-height: 1.5;
+  line-height: 2;
+  &>* {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    line-height: 1.25;
+  }
   h3 {
-    font-size: 2rem;
-    margin: 2rem 0 1.5rem;
+    font-size: 2em;
+    margin-block-start: 2em;
+    margin-block-end: .5em;
     font-weight: 600;
   }
   h4 {
-    font-size: 1.5rem;
-    margin: 2rem 0 1.5rem;
+    font-size: 1.5em;
+    margin-block-start: 2em;
+    margin-block-end: .5em;
+  }
+  h5 {
+    font-size: 1.3em;
+  }
+  h5 {
+    font-size: 1.1em;
+  }
+  h6 {
+    font-size: 1.0em;
   }
   p {
-    margin-block-start: 1rem;
-    margin-block-end: 1rem;
-    font-size: 1rem;
+    font-size: 1em;
     :first-child {
       margin-top: 0;
     }
+    code {
+      padding: .1em .2em;
+      background: var(--c-primary-darker);
+      border-radius: 4px;
+    }
   }
   pre {
-    padding: 1rem;
+    padding: 1em;
     white-space: pre;
+    border-radius: 4px;
+    line-height: 1.5;
     background: var(--c-bg-code);
     color: var(--c-text-code);
     overflow-x: auto;
+    font-size: 0.8em;
+  }
+  hr {
+    color: var(--c-text-hr);
+  }
+  ul, ol {
+    padding-left: 1.5em;
+    p {
+      margin: 0;
+    }
+  }
+  ol {
+    list-style: decimal;
+  }
+  ul {
+    list-style: disc;
+
   }
 }
