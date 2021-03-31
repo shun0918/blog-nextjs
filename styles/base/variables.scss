@@ -18,6 +18,12 @@ $breakpoints: (
   box-shadow:  $p $p $size var(--c-primary-darker),
               (-$p) (-$p) $size var(--c-primary-lighter);
 }
+@mixin shadow-dent($size:30px) {
+  $p: ($size * 0.3);
+  background: var(--c-primary);
+  box-shadow: inset $p $p $size var(--c-primary-darker),
+              inset (-$p) (-$p) $size var(--c-primary-lighter);
+}
 
 
 @mixin container() {

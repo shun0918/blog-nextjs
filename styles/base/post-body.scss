@@ -1,10 +1,11 @@
 @mixin post-body {
   line-height: 1.5;
-  h2 {
+  h3 {
     font-size: 2rem;
     margin: 2rem 0 1.5rem;
+    font-weight: 600;
   }
-  h3 {
+  h4 {
     font-size: 1.5rem;
     margin: 2rem 0 1.5rem;
   }
@@ -16,7 +17,7 @@
       margin-top: 0;
     }
   }
-  code {
+  pre {
     padding: 1rem;
     white-space: pre;
     background: var(--c-bg-code);

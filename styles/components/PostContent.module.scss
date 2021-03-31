@@ -2,14 +2,30 @@
 @import 'base/post-body';
 
 .content {
-  max-width: 640px;
   margin: 0 auto;
-  padding:3rem 0;
+  padding: 4%;
+  @include drop-shadow;
+  border-radius: 2rem;
+  
+  
+  &__eyecatch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__head, &__body {
+    max-width: 640px;
+    margin: 0 auto ;
+  }
 
   &__title {
     font-size: 2.2rem;
-    line-height: 200%;
-    font-weight: 600;
+    line-height: 1.5;
+    font-weight: 400;
     margin:2rem 0 0.5rem;
   }
   
@@ -18,9 +34,15 @@
     color: var(--c-text-h);
   }
   
-  &__eyecatch {
-    width: 100%;
+  &__eyecatch-wrapper {
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 62.25%;
+    }
   }
+
 
   &__body {
     @include post-body;

@@ -2,10 +2,13 @@
 
 .main {
   margin: 0 auto;
-  padding: 5rem 0;
 }
 
 .container {
   @include container;
-  @include drop-shadow;
+  padding: 4%;
+  @include shadow-dent;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  border-radius: 2rem;
 }

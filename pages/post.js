@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { fetchPostBySlug } from '../lib/contentful/contentful';
 import PostContent from '../components/PostContent'
 import styles from '../styles/pages/post.module.scss'
+import PostEyecatch from '../components/PostEyecatch';
 
 export default function Post() {
   const router = useRouter()
@@ -24,9 +25,16 @@ export default function Post() {
       <Head>
         <title>{"fields" in post ? post.fields.title : "loading..."}</title>
       </Head>
+      {/* {"fields" in post
+       ? <PostEyecatch
+        eyecatch={post.fields.thumbnail}
+        title={post.fields.title}
+      />
+      : null } */}
 
       <main className={styles.main}>
         <div className={styles.container}>
+        
         {"fields" in post
           ? <PostContent 
               title={post.fields.title}
