@@ -4,28 +4,23 @@
     margin-block-start: 1em;
     margin-block-end: 1em;
   }
-  h1,h2,h3,h4,h5,h6 {
+  h3,h4,h5,h6 {
     line-height: 1.25;
+    margin-block-start: 2em;
+    margin-block-end: 1em;
   }
   h3 {
     font-size: 2em;
-    margin-block-start: 2em;
-    margin-block-end: .5em;
     font-weight: 600;
   }
   h4 {
     font-size: 1.5em;
-    margin-block-start: 2em;
-    margin-block-end: .5em;
   }
   h5 {
     font-size: 1.3em;
   }
-  h5 {
-    font-size: 1.1em;
-  }
   h6 {
-    font-size: 1.0em;
+    font-size: 1.1em;
   }
   p {
     font-size: 1em;
