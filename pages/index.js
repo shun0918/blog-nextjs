@@ -17,7 +17,7 @@ export default function index() {
   return (
     <>
       <Head>
-        <title>Web developer blog | kabosu</title>
+        <title>Shun Bibo Roku | shun nihei</title>
       </Head>
       <main className={styles.main}>
         <section className={styles.container}>
