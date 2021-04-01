@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import { fetchPostBySlug } from '../lib/contentful/contentful';
+import { fetchPostBySlug } from '../lib/contentful/contentful'
 import PostContent from '../components/PostContent'
 import styles from '../styles/pages/post.module.scss'
 
