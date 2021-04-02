@@ -12,17 +12,15 @@ $breakpoints: (
   }
 }
 
-@mixin drop-shadow($size:30px) {
-  $p: ($size * 0.3);
+@mixin drop-shadow($distance: 10px) {
   background: var(--c-primary);
-  box-shadow:  $p $p $size var(--c-primary-darker),
-              (-$p) (-$p) $size var(--c-primary-lighter);
+  box-shadow:  $distance $distance ($distance * 2) var(--c-primary-darker),
+              (-$distance) (-$distance) ($distance * 2) var(--c-primary-lighter);
 }
-@mixin shadow-dent($size:30px) {
-  $p: ($size * 0.3);
+@mixin shadow-dent($distance: 10px) {
   background: var(--c-primary);
-  box-shadow: inset $p $p $size var(--c-primary-darker),
-              inset (-$p) (-$p) $size var(--c-primary-lighter);
+  // box-shadow: inset $distance $distance ($distance * 2) var(--c-primary-darker),
+  //             inset (-$distance) (-$distance) ($distance * 2) var(--c-primary-lighter);
 }
 
 

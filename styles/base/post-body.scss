@@ -9,12 +9,15 @@
     margin-block-start: 2em;
     margin-block-end: 1em;
     font-weight: 600;
+    color: var(--c-text-h-bg);
+    font-family: "Osaka-Mono", "Hiragino Maru Gothic ProN";
   }
   h3 {
     font-size: 2em;
     font-weight: 600;
-    padding: 0.2em 0;
+    padding: 0.2em;
     border-bottom: 2px var(--c-text-h-border) solid;
+    border-radius: 4px;
   }
   h4 {
     font-size: 1.5em;

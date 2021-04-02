@@ -3,10 +3,18 @@
 
 .content {
   margin: 0 auto;
-  padding: 4%;
   @include drop-shadow;
   border-radius: 2rem;
-  
+  overflow: hidden;
+
+  &__eyecatch-wrapper {
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 62.25%;
+    }
+  }
   
   &__eyecatch {
     position: absolute;
@@ -17,34 +25,29 @@
     object-fit: cover;
   }
 
-  &__head, &__body {
-    max-width: 640px;
-    margin: 0 auto ;
+  // &__head, 
+  
+  &__head {
+    background: var(--c-text-h-bg);
+    color: var(--c-primary);
+    padding: 2rem;
   }
-
+  
   &__title {
-    font-size: 2.2rem;
-    line-height: 1.5;
+    font-size: 2.2em;
+    line-height: 1.25;
     font-weight: 400;
-    margin:2rem 0 0.5rem;
+    max-width: 640px;
   }
   
   &__date {
-    font-size: 1rem;
-    color: var(--c-text-h);
+    margin-top: 1em;
+    font-size: 1em;
   }
   
-  &__eyecatch-wrapper {
-    position: relative;
-    &::before {
-      content: '';
-      display: block;
-      padding-top: 62.25%;
-    }
-  }
-
-
   &__body {
+    max-width: 640px;
+    margin: 0 auto ;
     @include post-body;
     padding: 2rem 0;
   }
