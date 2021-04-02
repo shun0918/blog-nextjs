@@ -1,16 +1,17 @@
 :root {
   --c-body : #f4e2ca;
-  --c-primary: #f4e2ca;
-  --c-primary-darker: #c8b9a6;
-  --c-primary-lighter: #ffffee;
+  --c-primary: #FDF5F2;
+  --c-primary-darker: #d7d0ce;
+  --c-primary-lighter: #ffffff;
   --c-black: #000;
   --c-gray: #555;
   --c-text-p: #000;
   --c-text-h: #555;
   --c-text-code: #fff;
-  --c-bg-code: #000;
+  --c-bg-code: #2E4C5F;
   --c-text-hr: #555;
-  --c-text-h-border: #000
+  --c-text-h-border: #000;
+  --c-text-h-bg: #2E4C5F;
 }
 
 html,
@@ -23,7 +24,7 @@ body {
     "Hiragino Sans",
     Meiryo,
     sans-serif;
-  background-color: var(--c-body);
+  background-color: var(--c-primary);
 }
 
 body {
