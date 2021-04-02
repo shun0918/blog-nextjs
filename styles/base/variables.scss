@@ -15,12 +15,16 @@ $breakpoints: (
 @mixin drop-shadow($distance: 10px) {
   background: var(--c-primary);
   box-shadow:  $distance $distance ($distance * 2) var(--c-primary-darker),
-              (-$distance) (-$distance) ($distance * 2) var(--c-primary-lighter);
+              (-$distance) (-$distance) ($distance * 2) var(--c-primary-lighter),
+              inset $distance $distance ($distance * 2) transparent,
+              inset (-$distance) (-$distance) ($distance * 2) transparent;
 }
 @mixin shadow-dent($distance: 10px) {
   background: var(--c-primary);
-  // box-shadow: inset $distance $distance ($distance * 2) var(--c-primary-darker),
-  //             inset (-$distance) (-$distance) ($distance * 2) var(--c-primary-lighter);
+  box-shadow: $distance $distance ($distance * 2) transparent,
+              (-$distance) (-$distance) ($distance * 2) transparent,
+              inset $distance $distance ($distance * 2) var(--c-primary-darker),
+              inset (-$distance) (-$distance) ($distance * 2) var(--c-primary-lighter);
 }
 
 
