@@ -2,18 +2,10 @@
 
 .header {
   position: relative;
-  height: $header-height;
   width: 100vw;
 }
 .grobal-nav {
-  background: var(--c-primary);
-  box-shadow: 10px 10px 20px var(--c-primary-darker),
-              -10px -10px 20px var(--c-primary-lighter);
-  position: fixed;
-  top:0;
-  left:0;
-  z-index:1000;
-  width: 100%;
+  padding: 2rem 0;
 
   &__inner {
     align-items: center;
@@ -30,8 +22,9 @@
     position: absolute;
     transform: translate(-50%, -50%);
     font-family: 'Damion', cursive;
-    font-size: 2.2em;
+    font-size: 2.4em;
     color: var(--c-red);
+    text-shadow: var(--c-red-darker) 1px 1px .1em;
     
     &--link {
       display: block;
