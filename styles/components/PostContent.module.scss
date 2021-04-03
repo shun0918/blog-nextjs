@@ -61,8 +61,13 @@
     margin: 0 auto;
     padding: 2rem 0;
 
+    @include mq(md) {
+      padding: 1rem;
+    }
+
     @include mq(sm) {
       padding: 10px;
     }
+
   }
 }
