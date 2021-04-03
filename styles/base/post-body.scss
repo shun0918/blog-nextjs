@@ -72,4 +72,15 @@
   ul {
     list-style: disc;
   }
+  blockquote {
+    padding: 1rem;
+    border-radius: 4px;
+    font-style: italic;
+    color: var(--c-text-blockquote);
+    a {
+      color: var(--c-text-blockquote);
+      font-weight: 600;
+    }
+    @include shadow-dent;
+  }
 }
