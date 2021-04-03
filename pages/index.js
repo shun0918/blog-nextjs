@@ -20,8 +20,10 @@ export default function index() {
         <title>Shun Bibo Roku | Shun Nihei</title>
       </Head>
       <main className={styles.main}>
+        <div className={styles["section-header"]}>
+          <h2 className={styles["section-header__title"]}>Articles</h2>
+        </div>
         <section className={styles.container}>
-          <h1 className={styles.posts__title}>Articles</h1>
           <div className={styles.posts__list}>
             {posts.length > 0
               ? posts.map((p) => (
