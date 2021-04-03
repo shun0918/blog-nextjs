@@ -40,7 +40,7 @@
     }
   }
   pre {
-    padding: 1em;
+    padding: 1.5em;
     white-space: pre;
     border-radius: 4px;
     line-height: 1.5;
@@ -48,6 +48,9 @@
     color: var(--c-text-code);
     overflow-x: auto;
     font-size: 0.8em;
+    @include drop-shadow;
+    border: var(--c-primary-border);
+    color: var(--c-bg-code);
   }
   hr {
     color: var(--c-text-hr);
