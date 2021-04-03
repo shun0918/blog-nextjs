@@ -40,6 +40,10 @@
       border-radius: 4px;
     }
   }
+  a {
+    color: var(--c-text-a);
+    text-decoration: underline;
+  }
   pre {
     padding: 1.5em;
     white-space: pre;
@@ -67,6 +71,5 @@
   }
   ul {
     list-style: disc;
-
   }
 }
