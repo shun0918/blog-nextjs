@@ -44,6 +44,10 @@
     font-weight: 400;
     max-width: 640px;
     margin: 0 auto;
+
+    @include mq(sm) {
+      font-size: 1.6em;
+    }
   }
   
   &__date {
@@ -52,9 +56,13 @@
   }
   
   &__body {
-    max-width: 640px;
-    margin: 0 auto ;
     @include post-body;
+    max-width: 640px;
+    margin: 0 auto;
     padding: 2rem 0;
+
+    @include mq(sm) {
+      padding: 10px;
+    }
   }
 }

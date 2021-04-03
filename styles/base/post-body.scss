@@ -1,5 +1,6 @@
 @mixin post-body {
-  line-height: 2;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
   &>* {
     margin-block-start: 1em;
     margin-block-end: 1em;
