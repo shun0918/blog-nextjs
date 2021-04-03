@@ -9,19 +9,6 @@
   @include container;
 }
 
-.section-header {
-  padding: 5rem 0;
-  border-bottom: var(--c-primary-darker) 1px solid;
-
-  &__title {
-    text-align: center;
-    font-size: 3rem;
-    color: var(--c-green);
-    font-weight: 200;
-  }
-}
-
-
 .posts {
   &__list {
     padding: 7rem 0;
@@ -39,10 +26,6 @@
     @include mq(md) {
       display: grid;
       grid-template-columns: minmax(auto, 100%);
-    }
-
-    @include mq(sm) {
-      padding: 0 4%;
     }
   }
 }

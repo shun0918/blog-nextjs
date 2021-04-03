@@ -7,6 +7,10 @@
 .grobal-nav {
   padding: 3rem 0;
 
+  @include mq(sm) {
+    padding: 1.5rem 0;
+  }
+
   &__inner {
     @include container;
     position: relative;
@@ -25,6 +29,9 @@
     color: var(--c-red);
     text-shadow: var(--c-red-darker) 1px 1px .1em;
     transform: translate(-50%, -50%);
+    @include mq(sm) {
+      font-size: 1.6em;
+    }
     
     &--link {
       display: block;

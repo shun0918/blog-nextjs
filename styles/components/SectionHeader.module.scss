@@ -1,0 +1,21 @@
+@import 'base/variables';
+
+.section-header {
+  padding: 6rem 0;
+  border-bottom: var(--c-primary-darker) 1px solid;
+
+  @include mq (sm) {
+    padding: 3rem 0;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--c-green);
+    font-weight: 200;
+
+    @include mq(sm) {
+      font-size: 2rem;
+    }
+  }
+}

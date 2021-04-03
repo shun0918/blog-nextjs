@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import PostCard from '../components/PostCard'
 import styles from '../styles/pages/index.module.scss'
 import { fetchAllPosts } from '../lib/contentful/contentful'
+import SectionHeader from '../components/SectionHeader'
 
 export default function index() {
   const [posts, setPosts] = useState([])
@@ -20,9 +21,9 @@ export default function index() {
         <title>Shun Bibo Roku | Shun Nihei</title>
       </Head>
       <main className={styles.main}>
-        <div className={styles["section-header"]}>
-          <h2 className={styles["section-header__title"]}>Articles</h2>
-        </div>
+        <SectionHeader
+          title="Articles"
+        />
         <section className={styles.container}>
           <div className={styles.posts__list}>
             {posts.length > 0
