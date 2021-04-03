@@ -1,8 +1,8 @@
+@import 'base/variables';
+
 .footer {
-  padding: 25px 0;
-  background: var(--c-primary);
-  box-shadow:  9px 9px 30px var(--c-primary-darker),
-              -9px -9px 30px var(--c-primary-lighter);
+  @include shadow-bumps;
+  padding: 2rem 0;
 }
 .content-info {
   margin: 0 auto;
