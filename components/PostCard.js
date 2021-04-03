@@ -10,10 +10,12 @@ function PostCard({ title, thumbnail, body, publishedAt ,updatedAt, slug }) {
       <a className={styles["post-card--link"]}>
         <div className={styles["post-card"]}>
           <div className={styles["post-card__eyecatch"]}>
-            <img className={styles["post-card__eyecatch--img"]} alt={thumbnail.fields.file.fileName} src={thumbnail.fields.file.url} width="280" height="160"/>
+            <img className={styles["post-card__eyecatch--img"]} alt={thumbnail.fields.file.fileName} src={thumbnail.fields.file.url} width="320" height="240"/>
           </div>
-          <h2 className={styles["post-card__title"]}>{title}</h2>
-          <p className={styles["datetime"]}>投稿日:<time>{publishedAt}</time></p>
+          <div className={styles["post-card__body"]}>
+            <p className={styles["post-card__date"]}><time>{publishedAt}</time></p>
+            <h3 className={styles["post-card__title"]}>{title}</h3>
+          </div>
         </div>
       </a>
     </Link>
