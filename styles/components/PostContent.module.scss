@@ -2,13 +2,22 @@
 @import 'base/post-body';
 
 .content {
+  // @include drop-shadow;
   margin: 0 auto;
-  @include drop-shadow;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   overflow: hidden;
 
+  &__head {
+    background: var(--c-text-h-bg);
+    color: var(--c-primary);
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
   &__eyecatch-wrapper {
     position: relative;
+    max-width: 640px;
+    margin: 4rem auto 0;
     &::before {
       content: '';
       display: block;
@@ -27,17 +36,13 @@
 
   // &__head, 
   
-  &__head {
-    background: var(--c-text-h-bg);
-    color: var(--c-primary);
-    padding: 2rem;
-  }
   
   &__title {
     font-size: 2.2em;
     line-height: 1.5;
     font-weight: 400;
     max-width: 640px;
+    margin: 0 auto;
   }
   
   &__date {

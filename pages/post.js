@@ -25,8 +25,6 @@ export default function Post() {
         <title>{"fields" in post ? post.fields.title+"| Shun Nihei" : "loading..."}</title>
       </Head>
       <main className={styles.main}>
-        <div className={styles.container}>
-        
         {"fields" in post
           ? <PostContent 
               title={post.fields.title}
@@ -37,7 +35,6 @@ export default function Post() {
               slug={post.fields.slug}
             />
           : null }
-        </div>
       </main>
     </>
   )

@@ -14,16 +14,16 @@
   }
   h3 {
     font-size: 2em;
-    font-weight: 600;
+    font-weight: 400;
     padding: 0.2em;
-    border-bottom: 2px var(--c-text-h-border) solid;
-    border-radius: 4px;
+    border-bottom: 2px var(--c-red) solid;
+    color: var(--c-red);
   }
   h4 {
     font-size: 1.5em;
   }
   h5 {
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
   h6 {
     font-size: 1.1em;

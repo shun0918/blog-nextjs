@@ -4,12 +4,3 @@
   margin: 0 auto;
   min-height: 100vh;
 }
-
-.container {
-  @include container;
-  padding: 4%;
-  @include shadow-dent;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  border-radius: 2rem;
-}
