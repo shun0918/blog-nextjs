@@ -12,7 +12,7 @@
     // color: var(--c-primary);
     padding: 2rem 0;
     text-align: center;
-    @include drop-shadow;
+    @include shadow-bumps;
   }
   
   &__eyecatch-wrapper {

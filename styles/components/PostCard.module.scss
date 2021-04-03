@@ -1,7 +1,7 @@
 @import 'base/variables';
 
 .post-card {
-  @include drop-shadow;
+  @include shadow-bumps;
   transition: box-shadow ease-in-out 0.2s;
   position: relative;
   // border: var(--c-primary-darker) 1px solid;

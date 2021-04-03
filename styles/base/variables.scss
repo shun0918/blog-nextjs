@@ -11,7 +11,7 @@ $breakpoints: (
   }
 }
 
-@mixin drop-shadow($distance: 5px) {
+@mixin shadow-bumps($distance: 5px) {
   background: var(--c-primary);
   box-shadow:  $distance $distance ($distance * 2) var(--c-primary-darker),
               (-$distance) (-$distance) ($distance * 2) var(--c-primary-lighter),
