@@ -6,7 +6,7 @@ import '../styles/_app/destyle.css'
 import '../styles/_app/globals.scss'
 
 function MyApp({ Component, pageProps }) {
-  usePageView()
+  // usePageView()
   return (
     <>
       <Head>
