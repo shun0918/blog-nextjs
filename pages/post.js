@@ -22,7 +22,7 @@ export default function Post() {
   return (
     <>
       <Head>
-        <title>{"fields" in post ? post.fields.title+"| Shun Nihei" : "loading..."}</title>
+        <title>{"fields" in post ? post.fields.title + "| Shun Nihei" : "loading..."}</title>
       </Head>
       <main className={styles.main}>
         {"fields" in post
