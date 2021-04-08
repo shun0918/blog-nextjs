@@ -13,10 +13,13 @@ export default function Post() {
   const [post, setPost] = useState({})
   const [slug, setSlug] = useState(router.query.slug)
   const [description, setDescription] = useState("")
+  const [imagePath, setImagePath] = useState("")
   useEffect(() => {
     async function getPost() {
       const postData = await fetchPostBySlug(slug)
+      console.log(postData);
       setPost(postData)
+      setImagePath("https:" + postData.fields.thumbnail.fields.file.url)
       if(post.fields && post.fields.body){
         setDescription("現在Contentfulのリッチテキストからdescriptionを生成する方法を検討中です！")
         // setDescription(_documentToReactComponents(post.fields.body))
@@ -34,7 +37,7 @@ export default function Post() {
         ? <Ogp 
           title={post.fields.title}
           description={description}
-          imagePath={post.fields.thumbnail.fields.file.url}
+          imagePath={imagePath}
           type="article"
           path={"/post"+"?slug="+post.fields.slug}
         />
