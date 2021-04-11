@@ -31,7 +31,7 @@ export default function Post() {
   return (
     <>
       <Head>
-        <title>{"fields" in post ? post.fields.title + "| Shun Nihei" : "loading..."}</title>
+        {"fields" in post ? <title>{post.fields.title + "| Shun Nihei" }</title> : null}
       </Head>
       {"fields" in post
         ? <Ogp 
