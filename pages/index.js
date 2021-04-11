@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Ogp from '../components/Ogp'
 import { useEffect, useState } from 'react'
 import PostCard from '../components/PostCard'
 import styles from '../styles/pages/index.module.scss'
@@ -17,9 +18,13 @@ export default function index() {
 
   return (
     <>
-      <Head>
-        <title>Shun Bibo Roku | Shun Nihei</title>
-      </Head>
+      <Ogp
+        title="Shun Bibo Roku"
+        description="個人開発のハウツーや、備忘録を共有していきます。"
+        image="https://img/icon.jpeg"
+        type="website"
+        path="https://shunbiboroku.com"
+      />
       <main className={styles.main}>
         <SectionHeader
           title="Articles"
