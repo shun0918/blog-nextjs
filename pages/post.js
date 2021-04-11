@@ -13,13 +13,13 @@ export default function Post() {
   const [post, setPost] = useState({})
   const [slug, setSlug] = useState(router.query.slug)
   const [description, setDescription] = useState("")
-  const [imagePath, setImagePath] = useState("")
+  const [image, setImage] = useState("")
   useEffect(() => {
     async function getPost() {
       const postData = await fetchPostBySlug(slug)
       console.log(postData);
       setPost(postData)
-      setImagePath("https:" + postData.fields.thumbnail.fields.file.url)
+      setImage("https:" + postData.fields.thumbnail.fields.file.url)
       if(post.fields && post.fields.body){
         setDescription("現在Contentfulのリッチテキストからdescriptionを生成する方法を検討中です！")
         // setDescription(_documentToReactComponents(post.fields.body))
@@ -30,14 +30,11 @@ export default function Post() {
 
   return (
     <>
-      <Head>
-        <title>{"fields" in post ? post.fields.title + "| Shun Nihei" : "loading..."}</title>
-      </Head>
       {"fields" in post
         ? <Ogp 
-          title={post.fields.title}
+          title={post.fields.title + "| Shun Bibo Roku"}
           description={description}
-          imagePath={imagePath}
+          image={image}
           type="article"
           path={"/post"+"?slug="+post.fields.slug}
         />
