@@ -21,7 +21,7 @@ export default function index() {
       <Ogp
         title="Shun Bibo Roku"
         description="個人開発のハウツーや、備忘録を共有していきます。"
-        image="https://img/icon.jpeg"
+        image="/img/icon.jpeg"
         type="website"
         path="https://shunbiboroku.com"
       />
