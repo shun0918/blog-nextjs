@@ -3,7 +3,7 @@ import Ogp from '../components/Ogp'
 import { useEffect, useState } from 'react'
 import PostCard from '../components/PostCard'
 import styles from '../styles/pages/index.module.scss'
-import { fetchAllPosts } from '../lib/contentful/contentful'
+import { fetchAllPostsWithSlug,fetchAllPosts } from '../lib/contentful/contentful'
 import SectionHeader from '../components/SectionHeader'
 
 export default function index() {
