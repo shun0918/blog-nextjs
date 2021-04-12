@@ -1,8 +1,6 @@
-import { useRouter } from 'next/router'
 import Head from 'next/head'
 function Ogp({ title, description, image, type, path }) {
   const location = process.env.NEXT_PUBLIC_LOCATION || 'https://shunbiboroku.com'
-  const router = useRouter()
   const url = location + path
   const siteName = "Shun Bibo Roku"
 
