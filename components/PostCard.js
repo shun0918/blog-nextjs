@@ -4,7 +4,7 @@ import styles from '../styles/components/PostCard.module.scss'
 function PostCard({ title, thumbnail, body, publishedAt ,updatedAt, slug }) {
   return (
     <Link
-      href={{ pathname: '/post', query: { slug:slug } }}
+      href={{ pathname: '/post/'+slug }}
       passHref={true}
     >
       <a className={styles["post-card--link"]}>
