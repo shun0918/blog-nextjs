@@ -1,7 +1,4 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
-import { fetchAllPostsWithSlug, fetchPostBySlug } from '../../lib/contentful/contentful'
+import { fetchAllPostsWithSlug, fetchPostBySlug, parsePlainTextForDescription } from '../../lib/contentful/contentful'
 import PostContent from '../../components/PostContent'
 import Ogp from '../../components/Ogp'
 import styles from '../../styles/pages/post.module.scss'
@@ -9,13 +6,12 @@ import { _documentToReactComponents } from '../../lib/contentful/_documentToReac
 
 
 const Post = (props) => {
-  const description = "現在準備中"
   return (
     <>
       {"fields" in props.post
         ? <Ogp 
           title={props.post.fields.title + "| Shun Bibo Roku"}
-          description={description || ""}
+          description={props.description}
           image={props.image}
           type="article"
           path={props.path}
@@ -41,13 +37,15 @@ export const getStaticProps = async ({ params }) => {
   const post = await fetchPostBySlug(params.slug)
   const image = "https:" + post.fields.thumbnail.fields.file.url
   const path = "/post/" + params.slug
+  const description = parsePlainTextForDescription(post.fields.body)
 
   return {
     props: {
       post,
       image,
       path,
-      slug: params.slug
+      slug: params.slug,
+      description,
     },
   }
 }
