@@ -3,7 +3,8 @@ function Ogp({ title, description, image, type, path }) {
   const location = process.env.NEXT_PUBLIC_LOCATION || 'https://shunbiboroku.com'
   const url = location + path
   const siteName = "Shun Bibo Roku"
-
+  const twitterSite = '@kabosu_en'
+  const twitterCard = 'summary_large_image'
 
   return (
     <Head>
@@ -14,8 +15,8 @@ function Ogp({ title, description, image, type, path }) {
       <meta property="og:url" content={url} />
       <meta property="og:image" content={image} />
       <meta property="og:site_name" content={siteName} />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@kabosu_en" />
+      <meta name="twitter:card" content={twitterSite} />
+      <meta name="twitter:site" content={twitterSite} />
       <meta name="twitter:url" content={url} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
