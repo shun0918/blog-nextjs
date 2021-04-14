@@ -1,8 +1,6 @@
 import styles from '../styles/components/PostContent.module.scss'
-import { _documentToReactComponents } from '../lib/contentful/_documentToReactComponents'
 
 function PostContent({ title, thumbnail, body, publishedAt, updatedAt, slug }) {
-  const compiledBody = body ? _documentToReactComponents(body) : '' 
 
   return (
     <article className={styles.content}>
@@ -20,7 +18,7 @@ function PostContent({ title, thumbnail, body, publishedAt, updatedAt, slug }) {
         />
       </div>
       <div className={styles.content__body}>
-        { compiledBody }
+        { body }
       </div>
     </article>
   )

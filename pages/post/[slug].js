@@ -6,6 +6,8 @@ import { _documentToReactComponents } from '../../lib/contentful/_documentToReac
 
 
 const Post = (props) => {
+  const body = _documentToReactComponents(props.post.fields.body)
+
   return (
     <>
       {"fields" in props.post
@@ -22,7 +24,7 @@ const Post = (props) => {
           ? <PostContent 
               title={props.post.fields.title}
               thumbnail={props.post.fields.thumbnail}
-              body={props.post.fields.body}
+              body={body}
               publishedAt={props.post.fields.publishedAt}
               updatedAt={props.post.fields.updatedAt}
               slug={props.post.fields.slug}
