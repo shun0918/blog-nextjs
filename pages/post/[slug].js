@@ -58,7 +58,7 @@ export async function getStaticPaths() {
     params: slug,
   }))
   console.log(paths);
-  return {paths, fallback: false}
+  return {paths, fallback: 'blocking'}
 }
 
 export default Post
