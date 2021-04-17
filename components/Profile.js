@@ -9,7 +9,7 @@ function Profile() {
     },
     {
       src: "/img/Icon awesome-twitter.png",
-      href: "https://twitter.com/kabosu_en",
+      href: "https://twitter.com/DVq0Hp0iU6itt4N",
     },
   ]
   return (
