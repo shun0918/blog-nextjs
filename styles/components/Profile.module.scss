@@ -1,0 +1,75 @@
+@import 'base/variables';
+
+.profile {
+  @include container;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  @include mq(md) {
+    display: block;
+  }
+
+  &__image-flame {
+    @include shadow-bumps;
+    padding: 1rem;
+    border-radius: 70% 80% 50% 60%;
+    max-width:50%;
+    @include mq(md) {
+      max-width: 100%;
+      margin-bottom: 3rem;
+    }
+  }
+  
+  &__image {
+    border-radius: 70% 80% 50% 60%;
+    max-width:100%;
+    height: auto;
+  }
+  
+  &__details {
+    line-height: 1.75;
+    max-width: 40%;
+    @include mq(md) {
+      max-width: $max-content-width;
+      text-align: center;
+    }
+  }
+  
+  &__title {
+    margin-bottom: 2.5rem;
+    font-size: 3rem;
+    font-family: 'Osaka';
+    line-height: 1.25;
+    color: var(--c-red);
+    @include mq(lg){
+      font-size: 2.5rem;
+    }
+    @include mq(sm) {
+      font-size: 2rem;
+    }
+    &--spbr {
+      display: none;
+      @include mq(sm) {
+        display: block;
+      }
+    }
+  };
+  
+  &__icons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 1rem;
+    @include mq(md) {
+      justify-content: center;
+    }
+  }
+
+  &__icon {
+    margin-left: 1rem;
+    &:first-of-type {
+      margin-left:0;
+    }
+  }
+}

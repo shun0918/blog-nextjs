@@ -13,8 +13,8 @@ function PostCard({ title, thumbnail, body, publishedAt ,updatedAt, slug }) {
             <img className={styles["post-card__eyecatch--img"]} alt={thumbnail.fields.file.fileName} src={thumbnail.fields.file.url} width="320" height="240"/>
           </div>
           <div className={styles["post-card__body"]}>
-            <p className={styles["post-card__date"]}><time>{publishedAt}</time></p>
             <h3 className={styles["post-card__title"]}>{title}</h3>
+            <p className={styles["post-card__date"]}><time>{publishedAt}</time></p>
           </div>
         </div>
       </a>

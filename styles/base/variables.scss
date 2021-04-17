@@ -4,6 +4,7 @@ $breakpoints: (
   'lg': 992px,
   'xl': 1200px,
 );
+$max-content-width: 640px;
 
 @mixin mq($size) {
   @media screen and (max-width: #{map-get($breakpoints, $size)}) {
@@ -25,7 +26,9 @@ $breakpoints: (
               inset $distance $distance ($distance * 2) var(--c-primary-darker),
               inset (-$distance) (-$distance) ($distance * 2) var(--c-primary-lighter);
 }
-
+@mixin shadow-transition() {
+  transition: box-shadow ease-in-out 0.2s;
+}
 
 @mixin container() {
   margin-left: auto;
