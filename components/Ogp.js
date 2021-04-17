@@ -3,7 +3,7 @@ function Ogp({ title, description, image, type, path }) {
   const location = process.env.NEXT_PUBLIC_LOCATION || 'https://shunbiboroku.com'
   const url = location + path
   const siteName = "Shun Bibo Roku"
-  const twitterSite = '@kabosu_en'
+  const twitterSite = '@DVq0Hp0iU6itt4N'
   const twitterCard = 'summary_large_image'
 
   return (
