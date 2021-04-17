@@ -1,10 +1,11 @@
-import Head from 'next/head'
-import Ogp from '../components/Ogp'
 import { useEffect, useState } from 'react'
-import PostCard from '../components/PostCard'
-import styles from '../styles/pages/index.module.scss'
+import Head from 'next/head'
 import { fetchAllPosts } from '../lib/contentful/contentful'
+import Ogp from '../components/Ogp'
+import FirstView from '../components/FirstView'
+import PostCard from '../components/PostCard'
 import SectionHeader from '../components/SectionHeader'
+import styles from '../styles/pages/index.module.scss'
 
 export default function index() {
   const [posts, setPosts] = useState([])
@@ -25,6 +26,7 @@ export default function index() {
         type="website"
         path="https://shunbiboroku.com"
       />
+      <FirstView />
       <main className={styles.main}>
         <SectionHeader
           title="Articles"

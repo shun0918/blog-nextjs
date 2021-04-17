@@ -1,0 +1,17 @@
+@import 'base/variables';
+
+.roundicon {
+  @include shadow-bumps;
+  @include shadow-transition;
+  padding: 0.5rem;
+  border-radius: 100%;
+
+  &:hover {
+    @include shadow-dent;
+  }
+
+  &__image {
+    max-width: 100%;
+  }
+
+}

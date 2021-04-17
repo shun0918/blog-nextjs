@@ -2,7 +2,7 @@
 
 .post-card {
   @include shadow-bumps;
-  transition: box-shadow ease-in-out 0.2s;
+  @include shadow-transition;
   position: relative;
   // border: var(--c-primary-darker) 1px solid;
   border-radius: 30px;

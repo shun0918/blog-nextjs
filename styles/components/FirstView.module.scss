@@ -1,0 +1,35 @@
+@import 'base/variables';
+
+.firstview {
+
+  @include mq(sm) {
+    padding: 1.5rem 0;
+  }
+
+  &__inner {
+    @include container;
+    padding: 9rem 0;
+    text-align: center;
+    justify-content: flex-start;
+    @include mq(md) {
+      padding: 7rem 0;
+    }
+    @include mq(sm) {
+      padding: 3rem 0;
+    }
+  }
+
+  &__logo {
+    font-family: var(--font-damion);
+    font-size: 5em;
+    color: var(--c-red);
+    // transform: translate(-50%, -50%);
+    @include mq(md) {
+      font-size: 3em;
+    }
+    
+    &--link {
+      display: block;
+    }
+  }
+}
