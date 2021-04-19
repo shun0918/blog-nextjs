@@ -16,7 +16,7 @@ function Profile() {
     <>
       <div className={styles.profile}>
         <div className={styles["profile__image-flame"]}>
-          <img src="/img/icon.jpeg" className={styles.profile__image} width="500" height="500"/>
+          <img src="/img/ben.png" alt="うさぎのベン" className={styles.profile__image} width="500" height="500"/>
         </div>
         <div className={styles.profile__details}>
           <h2 className={styles.profile__title}>好きな技術は、<br className={styles["profile__title--spbr"]} aria-hidden="true" />個人開発で。</h2>
