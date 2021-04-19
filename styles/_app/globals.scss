@@ -21,20 +21,15 @@
   --c-text-h-border: #000;
   --c-text-h-bg: #2E4C5F;
   --font-damion: 'Damion', cursive;
-  --font-family-sans-serif: "Helvetica Neue",
-  Arial,
-  "Hiragino Kaku Gothic ProN",
-  "Hiragino Sans",
-  Meiryo,
-  sans-serif;
-
+  --font-sans-serif: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --font-code: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace,"Segoe UI Emoji";
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: var(--font-family-sans-serif);
+  font-family: var(--font-sans-serif);
   background-color: var(--c-primary);
 }
 
