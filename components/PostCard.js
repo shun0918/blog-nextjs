@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styles from '../styles/components/PostCard.module.scss'
 
-function PostCard({ title, thumbnail, body, publishedAt ,updatedAt, slug }) {
+function PostCard({ title, thumbnail, publishedAt ,updatedAt, slug }) {
   return (
     <Link
       href={{ pathname: '/post/'+slug }}
