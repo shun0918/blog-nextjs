@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import Head from 'next/head'
 import { fetchAllPosts } from '../lib/contentful/contentful'
 import Ogp from '../components/Ogp'
 import FirstView from '../components/FirstView'
@@ -36,12 +35,12 @@ export default function index() {
             {posts.length > 0
               ? posts.map((p) => (
                   <PostCard
-                    key={p.fields.title}
-                    thumbnail={p.fields.thumbnail}
+                    key={p.fields.slug}
                     title={p.fields.title}
-                    slug={p.fields.slug}
+                    thumbnail={p.fields.thumbnail}
                     publishedAt={p.fields.publishedAt}
                     updatedAt={p.fields.updatedAt}
+                    slug={p.fields.slug}
                   />
                 ))
               : null}
