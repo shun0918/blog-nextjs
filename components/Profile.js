@@ -23,8 +23,11 @@ function Profile() {
           <p>UI/UXデザインから、フロントエンド、時にバックエンドなど、個人開発に役立つ些細な気づきを記事として残していきます。</p>
           <p>本ブログのソースコードも公開中。</p>
           <div className={styles.profile__icons}>
-            { icons.map( m =>(
-              <div className={styles.profile__icon} >
+            { icons.map( (m, i) =>(
+              <div
+                key={i}
+                className={styles.profile__icon}
+              >
                 <RoundIcon 
                   src={m.src}
                   href={m.href}
