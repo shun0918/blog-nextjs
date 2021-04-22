@@ -11,6 +11,10 @@ function Profile() {
       src: "/img/Icon awesome-twitter.png",
       href: "https://twitter.com/DVq0Hp0iU6itt4N",
     },
+    {
+      src: "/img/Icon awesome-handshake.png",
+      href: "/works",      
+    }
   ]
   return (
     <>
