@@ -27,7 +27,7 @@
     font-family: var(--font-damion);
     font-size: 2.2em;
     color: var(--c-red);
-    text-shadow: var(--c-red-darker) 1px 1px .1em;
+    // text-shadow: var(--c-red-darker) 1px 1px .1em;
     transform: translate(-50%, -50%);
     @include mq(sm) {
       font-size: 1.6em;
