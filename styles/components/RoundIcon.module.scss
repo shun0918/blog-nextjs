@@ -6,6 +6,10 @@
   padding: 0.5rem;
   border-radius: 100%;
 
+  &__link {
+    display: block;
+  }
+
   &:hover {
     @include shadow-dent;
   }
