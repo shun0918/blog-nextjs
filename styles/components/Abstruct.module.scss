@@ -1,5 +1,26 @@
 @import 'base/variables';
 
 .abstruct {
+  &__link {
+    display: block;
+  }
+  &__image {
+    max-width: 100%;
+    object-fit: cover;
+  }
+  &__title {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
   
+  &__tags, &__description {
+    margin-top: 1em;
+  }
+  &__tags {
+    color: var(--c-red);
+    font-size: 0.8rem;
+  }
+  &__description {
+    line-height: 1.75;
+  }
 }

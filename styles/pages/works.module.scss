@@ -1,0 +1,21 @@
+@import 'base/variables';
+
+.works {
+  @include container;
+  padding: 7rem 0;
+
+  @include mq (md) {
+    padding: 5rem 0;
+  }
+
+  &__item {
+    margin-top: 9rem;
+    &:first-of-type {
+      margin-top:0;
+    }
+
+    @include mq(mq) {
+      margin-top: 7rem;
+    }
+  }
+}
