@@ -4,9 +4,16 @@
   &__link {
     display: block;
   }
+  &__image-flame, &__image {
+    border-radius: 1rem;
+  }
+  &__image-flame {
+    @include shadow-bumps;
+    padding: 1rem;
+    overflow: hidden;
+  }
   &__image {
     max-width: 100%;
-    height: auto;
     object-fit: cover;
   }
   &__title {
