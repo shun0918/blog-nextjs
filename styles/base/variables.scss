@@ -35,8 +35,11 @@ $max-content-width: 640px;
   margin-right: auto;
   padding-left: 4%;
   padding-right: 4%;
-  max-width: 960px;
+  max-width: 1120px;
 
+  @include mq('xl') {
+    max-width: 960px;
+  }
   @include mq('lg') {
     max-width: 768px;
   }
