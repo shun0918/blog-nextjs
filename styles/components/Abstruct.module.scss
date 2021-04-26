@@ -27,11 +27,12 @@
   }
   
   &__tags, &__description {
-    margin-top: 1em;
+    margin-top: 1rem;
   }
   &__tags {
     color: var(--c-red);
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 600;
   }
   &__description {
     line-height: 1.75;
