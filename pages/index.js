@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { fetchAllPosts } from '../lib/contentful/contentful'
+import { fetchAllPosts , CONTENT_TYPE} from '../lib/contentful/contentful'
 import Ogp from '../components/Ogp'
 import FirstView from '../components/FirstView'
 import PostCard from '../components/PostCard'
@@ -10,7 +10,7 @@ export default function index() {
   const [posts, setPosts] = useState([])
   useEffect(() => {
     async function getPosts() {
-      const allPosts = await fetchAllPosts()
+      const allPosts = await fetchAllPosts(CONTENT_TYPE.POST)
       setPosts([...allPosts])
     }
     getPosts()

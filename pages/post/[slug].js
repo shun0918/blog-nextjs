@@ -1,4 +1,4 @@
-import { fetchAllPostsWithSlug, fetchPostBySlug, parsePlainTextForDescription } from '../../lib/contentful/contentful'
+import { fetchAllPostsWithSlug, fetchPostBySlug, parsePlainTextForDescription, CONTENT_TYPE } from '../../lib/contentful/contentful'
 import PostContent from '../../components/PostContent'
 import Ogp from '../../components/Ogp'
 import styles from '../../styles/pages/post.module.scss'
@@ -36,7 +36,7 @@ const Post = (props) => {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const post = await fetchPostBySlug(params.slug)
+  const post = await fetchPostBySlug(params.slug, CONTENT_TYPE.POST)
   const image = "https:" + post.fields.thumbnail.fields.file.url
   const path = "/post/" + params.slug
   const description = parsePlainTextForDescription(post.fields.body)
@@ -53,7 +53,7 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export async function getStaticPaths() {
-  const slugs = await fetchAllPostsWithSlug()
+  const slugs = await fetchAllPostsWithSlug(CONTENT_TYPE.POST)
   const paths = slugs.map(slug => ({
     params: slug,
   }))
