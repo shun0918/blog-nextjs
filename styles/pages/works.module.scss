@@ -2,7 +2,6 @@
 
 .works {
   @include container;
-  max-width: 960px;
   padding: 7rem 0;
 
   @include mq (md) {
@@ -10,7 +9,7 @@
   }
 
   &__item {
-    margin-top: 9rem;
+    margin: 7rem auto 0;
     &:first-of-type {
       margin-top:0;
     }

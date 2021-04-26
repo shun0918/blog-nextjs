@@ -9,7 +9,6 @@ export default function works() {
   useEffect(() => {
     async function getWorks() {
       const allWorks = await fetchAllPosts(CONTENT_TYPE.WORKS)
-      console.log(allWorks)
       setWorks([...allWorks])
     }
     getWorks()

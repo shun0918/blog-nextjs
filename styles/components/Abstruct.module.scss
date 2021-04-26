@@ -11,9 +11,14 @@
     @include shadow-bumps;
     padding: 1rem;
     overflow: hidden;
+
+    @include mq(md) {
+      padding: 0.75rem;
+    }
   }
   &__image {
     max-width: 100%;
+    height: auto;
     object-fit: cover;
   }
   &__title {
