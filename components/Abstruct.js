@@ -1,4 +1,4 @@
-import styles from '../styles/components/abstruct.module.scss'
+import styles from '../styles/components/Abstruct.module.scss'
 
 function Abstruct({ imagePath, url, tags, title, description, width="1280", height="720"}) {
   const _tags = tags.join("/")
