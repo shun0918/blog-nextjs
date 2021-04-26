@@ -1,0 +1,40 @@
+@import 'base/variables';
+
+.abstruct {
+  &__link {
+    display: block;
+  }
+  &__image-flame, &__image {
+    border-radius: 1rem;
+  }
+  &__image-flame {
+    @include shadow-bumps;
+    padding: 1rem;
+    overflow: hidden;
+
+    @include mq(md) {
+      padding: 0.75rem;
+    }
+  }
+  &__image {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  &__title {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+  
+  &__tags, &__description {
+    margin-top: 1rem;
+  }
+  &__tags {
+    color: var(--c-red);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  &__description {
+    line-height: 1.75;
+  }
+}
