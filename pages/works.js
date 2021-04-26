@@ -19,24 +19,24 @@ export default function works() {
         title="Works"
       />
       <ul className={styles.works}>
-      { works.map((m) => (
-        <li
-          className={styles.works__item}
-          key={m.fields.slug}
-        >
-          <Abstruct
-            title={m.fields.name}
-            tags={m.fields.roles}
-            description={m.fields.description}
-            url={m.fields.url}
-            imagePath={parseImgUrl(m.fields.image)}
-            height="720"
-            width="1280"
-          />
-        </li>
-      ))
-
-      }
+      {works.length > 0
+        ? works.map((m) => (
+          <li
+            className={styles.works__item}
+            key={m.fields.slug}
+          >
+            <Abstruct
+              title={m.fields.name}
+              tags={m.fields.roles}
+              description={m.fields.description}
+              url={m.fields.url}
+              imagePath={parseImgUrl(m.fields.image)}
+              height="720"
+              width="1280"
+            />
+          </li>
+        ))
+        : null}
       </ul>
     </>
   )
