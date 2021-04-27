@@ -1,20 +1,20 @@
-import { useEffect, useState } from 'react'
-import { fetchAllPosts , CONTENT_TYPE} from '../lib/contentful/contentful'
-import Ogp from '../components/Ogp'
-import FirstView from '../components/FirstView'
-import PostCard from '../components/PostCard'
-import SectionHeader from '../components/SectionHeader'
-import styles from '../styles/pages/index.module.scss'
+import { useEffect, useState } from 'react';
+import { fetchAllPosts, CONTENT_TYPE } from '../lib/contentful/contentful';
+import Ogp from '../components/Ogp';
+import FirstView from '../components/FirstView';
+import PostCard from '../components/PostCard';
+import SectionHeader from '../components/SectionHeader';
+import styles from '../styles/pages/index.module.scss';
 
-export default function index() {
-  const [posts, setPosts] = useState([])
+export default function Index() {
+  const [posts, setPosts] = useState([]);
   useEffect(() => {
     async function getPosts() {
-      const allPosts = await fetchAllPosts(CONTENT_TYPE.POST)
-      setPosts([...allPosts])
+      const allPosts = await fetchAllPosts(CONTENT_TYPE.POST);
+      setPosts([...allPosts]);
     }
-    getPosts()
-  }, [])
+    getPosts();
+  }, []);
 
   return (
     <>
@@ -27,9 +27,7 @@ export default function index() {
       />
       <FirstView />
       <main className={styles.main}>
-        <SectionHeader
-          title="Articles"
-        />
+        <SectionHeader title="Articles" />
         <section className={styles.container}>
           <div className={styles.posts__list}>
             {posts.length > 0
@@ -48,5 +46,5 @@ export default function index() {
         </section>
       </main>
     </>
-  )
+  );
 }

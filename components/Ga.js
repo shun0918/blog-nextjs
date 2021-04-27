@@ -1,13 +1,10 @@
-import { GA_TRACKING_ID } from '../lib/ga/gtag'
+import { GA_TRACKING_ID } from '../lib/ga/gtag';
 
 function Ga() {
   return (
     <>
       {/* Global Site Tag (gtag.js) - Google Analytics */}
-      <script
-      async
-      src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-      />
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
       <script
         dangerouslySetInnerHTML={{
           __html: `
@@ -17,11 +14,11 @@ function Ga() {
         gtag('config', '${GA_TRACKING_ID}', {
           page_path: window.location.pathname,
         });
-      `,}}
+      `,
+        }}
       />
     </>
-  )
-
+  );
 }
 
-export default Ga
+export default Ga;
