@@ -1,6 +1,5 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import Ga from '../components/Ga'
-
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Ga from '../components/Ga';
 
 export default class MyDocument extends Document {
   render() {
@@ -14,6 +13,6 @@ export default class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
