@@ -1,7 +1,25 @@
 import styles from '../styles/components/Abstruct.module.scss';
 
-function Abstruct({ imagePath, url, tags, title, description, width = '1280', height = '720' }) {
-  const _tags = tags.join('/');
+type Props = {
+  imagePath: string;
+  url: string;
+  tags: string[];
+  title: string;
+  description: string;
+  width: string;
+  height: string;
+};
+
+const Abstruct: React.FC<Props> = ({
+  imagePath,
+  url,
+  tags,
+  title,
+  description,
+  width = '1280',
+  height = '720',
+}) => {
+  const _tags: string = tags.join('/');
 
   return (
     <div className={styles.abstruct}>
@@ -15,6 +33,6 @@ function Abstruct({ imagePath, url, tags, title, description, width = '1280', he
       </a>
     </div>
   );
-}
+};
 
 export default Abstruct;

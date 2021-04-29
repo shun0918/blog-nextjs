@@ -1,6 +1,15 @@
 import styles from '../styles/components/PostContent.module.scss';
 
-function PostContent({ title, thumbnail, body, publishedAt, updatedAt, slug }) {
+type Props = {
+  title: string;
+  thumbnail: any;
+  body: any;
+  publishedAt: string;
+  updatedAt: string;
+  slug: string;
+};
+
+const PostContent: React.FC<Props> = ({ title, thumbnail, body, publishedAt, updatedAt, slug }) => {
   return (
     <article className={styles.content}>
       <div className={styles.content__head}>
@@ -19,6 +28,6 @@ function PostContent({ title, thumbnail, body, publishedAt, updatedAt, slug }) {
       <div className={styles.content__body}>{body}</div>
     </article>
   );
-}
+};
 
 export default PostContent;
