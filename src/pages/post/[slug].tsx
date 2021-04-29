@@ -6,10 +6,19 @@ import {
 } from '../../lib/contentful/contentful';
 import PostContent from '../../components/PostContent';
 import Ogp from '../../components/Ogp';
-import styles from '../../styles/pages/post.module.scss';
+import styles from '../../styles/pages/post/[slug].module.scss';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import { _documentToReactComponents } from '../../lib/contentful/_documentToReactComponents';
 
-const Post = (props) => {
+type Props = {
+  post: any;
+  image: string;
+  path: string;
+  slug: string;
+  description: string;
+};
+
+const Post = (props: Props) => {
   const body = _documentToReactComponents(props.post.fields.body);
 
   return (
@@ -39,7 +48,7 @@ const Post = (props) => {
   );
 };
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = await fetchPostBySlug(params.slug, CONTENT_TYPE.POST);
   const image = 'https:' + post.fields.thumbnail.fields.file.url;
   const path = '/post/' + params.slug;
@@ -56,9 +65,9 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const slugs = await fetchAllPostsWithSlug(CONTENT_TYPE.POST);
-  const paths = slugs.map((slug) => ({
+  const paths = slugs.map((slug: any) => ({
     params: slug,
   }));
   console.log(paths);
