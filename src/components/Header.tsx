@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styles from '../styles/components/Header.module.scss';
 
-const Header = (
+const Header: React.FC = () => (
   <header className={styles.header}>
     <div className={styles['grobal-nav']}>
       <div className={styles['grobal-nav__inner']}>
