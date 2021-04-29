@@ -1,6 +1,6 @@
 import { GA_TRACKING_ID } from '../lib/ga/gtag';
 
-const Ga: JSX.Element = (
+const Ga: React.FC = () => (
   <>
     {/* Global Site Tag (gtag.js) - Google Analytics */}
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
