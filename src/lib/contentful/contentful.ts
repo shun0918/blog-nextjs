@@ -73,8 +73,8 @@ export async function fetchAllPosts(contentType: CONTENT_TYPES, orderBy?: OrderB
 }
 
 // URLごとにpostを取得
-export async function fetchPostBySlug(slug: string | string[], contentType: CONTENT_TYPES):Promise<Entry<ContentModels>>  {
-  const entries: contentful.EntryCollection<ContentModels> = await client.getEntries({
+export async function fetchPostBySlug<T>(slug: string | string[], contentType: CONTENT_TYPES):Promise<Entry<T>>  {
+  const entries: contentful.EntryCollection<T> = await client.getEntries({
     content_type: contentType,
     // 取得データの数
     limit: 1,
