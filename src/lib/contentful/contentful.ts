@@ -1,50 +1,27 @@
-import contentful, {Entry, EntryFields, Asset, RichTextContent} from 'contentful'
+import Client from 'contentful'
 import Works from '../../pages/works';
 
-/**
- * 20200317更新
- * content_type: post
- *   フィールド一覧
- *   thumbnail
- *   title
- *   body
- *   slug
- *   publishedAt
- *   updatedAt
- * content_type: works
- *   slug
- *   image
- *   name
- *   roles
- *   description
- *   url
- *   createdAt
- */
-
 export interface Post {
-  thumbnail: Asset;
-  title: EntryFields.Text;
-  body: EntryFields.RichText;
-  slug: EntryFields.Text;
-  publishedAt: EntryFields.Date;
-  updatedAt: EntryFields.Date;
+  thumbnail: Client.Asset;
+  title: Client.EntryFields.Text;
+  body: Client.EntryFields.RichText;
+  slug: Client.EntryFields.Text;
+  publishedAt: Client.EntryFields.Date;
+  updatedAt: Client.EntryFields.Date;
 }
 
 export interface Works {
-  slug: EntryFields.Text;
-  image: Asset;
-  name: EntryFields.Text
-  description: EntryFields.Text;
-  roles: EntryFields.Symbol[];
-  url: EntryFields.Text;
-  createdAt: EntryFields.Date;
+  slug: Client.EntryFields.Text;
+  image: Client.Asset;
+  name: Client.EntryFields.Text
+  description: Client.EntryFields.Text;
+  roles: Client.EntryFields.Symbol[];
+  url: Client.EntryFields.Text;
+  createdAt: Client.EntryFields.Date;
 }
-export type ContentModels = Post | Works;
 
-export declare enum CONTENT_TYPES {
-  POST = 'post',
-  WORKS = 'works',
-};
+export type ContentModels = Post | Works;
+type CONTENT_TYPES = 'post' | 'works';
 type PostOrderBy = '-fields.publishedAt' | '-fields.updatedAt';
 type WorksOrderBy = '-fields.createdAt';
 type OrderBy = PostOrderBy | WorksOrderBy;
@@ -52,7 +29,7 @@ type PostSelectFields = 'fields.slug' | 'fields.thumbnail' | 'fields.title' | 'f
 type WorksSelectFields = 'fields.slug' | 'fields.image' | 'fields.name' | 'fields.description' | 'fields.roles' | 'fields.url' | 'fields.createdAt';
 type Fields = PostSelectFields | WorksSelectFields;
 
-const client = contentful.createClient({
+const client = require('contentful').createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });
@@ -61,8 +38,8 @@ const maxDescriptionLength = 100;
 /**
  * 全てのpostを取得
  */
-export async function fetchAllPosts(contentType: CONTENT_TYPES, orderBy?: OrderBy) {
-  const entries = await client.getEntries({
+export async function fetchAllPosts (contentType: CONTENT_TYPES, orderBy?: OrderBy): Promise<Client.Entry<ContentModels>[]> {
+  const entries: Client.EntryCollection<ContentModels> = await client.getEntries({
     content_type: contentType,
     order: orderBy,
   });
@@ -73,8 +50,8 @@ export async function fetchAllPosts(contentType: CONTENT_TYPES, orderBy?: OrderB
 }
 
 // URLごとにpostを取得
-export async function fetchPostBySlug<T>(slug: string | string[], contentType: CONTENT_TYPES):Promise<Entry<T>>  {
-  const entries: contentful.EntryCollection<T> = await client.getEntries({
+export async function fetchPostBySlug<T>(slug: string | string[], contentType: CONTENT_TYPES):Promise<Client.Entry<T>>  {
+  const entries: Client.EntryCollection<T> = await client.getEntries({
     content_type: contentType,
     // 取得データの数
     limit: 1,
@@ -87,19 +64,19 @@ export async function fetchPostBySlug<T>(slug: string | string[], contentType: C
   console.log(`Error getting Entries for ${contentType}.`);
 }
 
-function parsePostSlug({ fields }: Entry<ContentModels> ) {
+function parsePostSlug({ fields }: Client.Entry<ContentModels> ) {
   return {
     slug: fields.slug,
   };
 }
 
-function parsePostSlugEntries(entries: contentful.EntryCollection<ContentModels>, cb = parsePostSlug) {
+function parsePostSlugEntries(entries: Client.EntryCollection<ContentModels>, cb = parsePostSlug) {
   return entries?.items?.map(cb);
 }
 
 // 全てのpostのURLを取得
 export async function fetchFieldCollection(contentType: CONTENT_TYPES, field: Fields) {
-  const entries: contentful.EntryCollection<ContentModels> = await client.getEntries({
+  const entries: Client.EntryCollection<ContentModels> = await client.getEntries({
     content_type: contentType,
     // postのslugの値を取得
     select: field,
@@ -109,10 +86,8 @@ export async function fetchFieldCollection(contentType: CONTENT_TYPES, field: Fi
 
 /**
  * リッチテキストからdescription用のプレーンテキストに変換
- * @param Object richText ContentfulのrichTextタイプのフィールド
- * @return string description用のテキスト
  */
-export function parsePlainTextForDescription(richText: EntryFields.RichText) {
+export function parsePlainTextForDescription(richText: Client.EntryFields.RichText) {
   return richText.content.reduce((acc, map) => {
     if (map.nodeType !== 'paragraph' || acc.length > maxDescriptionLength) {
       return acc;
@@ -124,12 +99,12 @@ export function parsePlainTextForDescription(richText: EntryFields.RichText) {
 /**
  * 再帰的にrichテキストからテキストを取得し、通常の文字列として返す。
  */
-function concatContentValue(content: RichTextContent[]): string {
+function concatContentValue(content: Client.RichTextContent[]): string {
   return content.reduce((acc, map) => {
     return 'content' in map ? acc + concatContentValue(map.content) : acc + map.value;
   }, '');
 }
 
-export function parseImgUrl(image: Asset) {
+export function parseImgUrl(image: Client.Asset) {
   return 'https:' + image.fields.file.url;
 }
