@@ -2,7 +2,7 @@ import {
   fetchFieldCollection,
   fetchPostBySlug,
   parsePlainTextForDescription,
-  Post
+  Post,
 } from '../../lib/contentful/contentful';
 import PostContent from '../../components/PostContent';
 import Ogp from '../../components/Ogp';
@@ -19,7 +19,7 @@ type Props = {
   description: string;
 };
 
-const Post = (props: Props) => {
+const Slug = (props: Props) => {
   const body = _documentToReactComponents(props.post.fields.body);
 
   return (
@@ -75,4 +75,4 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: 'blocking' };
 }
 
-export default Post;
+export default Slug;
