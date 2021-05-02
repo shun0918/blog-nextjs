@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { fetchAllPosts, parseImgUrl, CONTENT_TYPE } from '../lib/contentful/contentful';
+import { fetchAllPosts, parseImgUrl } from '../lib/contentful/contentful';
 import Abstruct from '../components/Abstruct';
 import SectionHeader from '../components/SectionHeader';
 import styles from '../styles/pages/works.module.scss';
@@ -8,7 +8,7 @@ export default function Works() {
   const [works, setWorks] = useState([]);
   useEffect(() => {
     async function getWorks() {
-      const allWorks = await fetchAllPosts(CONTENT_TYPE.WORKS);
+      const allWorks = await fetchAllPosts('works');
       setWorks([...allWorks]);
     }
     getWorks();
