@@ -1,7 +1,16 @@
 import Head from 'next/head';
-function Ogp({ title, description, image, type, path }) {
-  const location = process.env.NEXT_PUBLIC_LOCATION || 'https://shunbiboroku.com';
-  const url = location + path;
+
+type Props = {
+  title: string;
+  description: string;
+  image: string;
+  type: string;
+  path: string;
+};
+
+const Ogp: React.FC<Props> = ({ title, description, image, type, path }) => {
+  const location: string = process.env.NEXT_PUBLIC_LOCATION || 'https://shunbiboroku.com';
+  const url: string = location + path;
   const siteName = 'Shun Bibo Roku';
   const twitterSite = '@DVq0Hp0iU6itt4N';
   const twitterCard = 'summary_large_image';
@@ -16,7 +25,7 @@ function Ogp({ title, description, image, type, path }) {
       <meta property="og:url" content={url} />
       <meta property="og:image" content={image} />
       <meta property="og:site_name" content={siteName} />
-      <meta name="twitter:card" content={twitterSite} />
+      <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:site" content={twitterSite} />
       <meta name="twitter:url" content={url} />
       <meta name="twitter:title" content={title} />
@@ -24,5 +33,5 @@ function Ogp({ title, description, image, type, path }) {
       <meta name="twitter:image" content={image} />
     </Head>
   );
-}
+};
 export default Ogp;

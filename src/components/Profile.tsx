@@ -1,17 +1,20 @@
 import styles from '../styles/components/Profile.module.scss';
 import RoundIcon from './RoundIcon';
 
-function Profile() {
+const Profile: React.FC = () => {
   const icons = [
     {
+      alt: 'GitHub',
       src: '/img/Icon awesome-github.png',
       href: 'https://github.com/shun0918',
     },
     {
+      alt: 'Twitter',
       src: '/img/Icon awesome-twitter.png',
       href: 'https://twitter.com/DVq0Hp0iU6itt4N',
     },
     {
+      alt: '制作実績',
       src: '/img/Icon awesome-handshake.png',
       href: '/works',
     },
@@ -41,7 +44,7 @@ function Profile() {
           <div className={styles.profile__icons}>
             {icons.map((m, i) => (
               <div key={i} className={styles.profile__icon}>
-                <RoundIcon src={m.src} href={m.href} width="35" height="35" />
+                <RoundIcon alt={m.alt} src={m.src} href={m.href} width="35" height="35" />
               </div>
             ))}
           </div>
@@ -49,6 +52,6 @@ function Profile() {
       </div>
     </>
   );
-}
+};
 
 export default Profile;

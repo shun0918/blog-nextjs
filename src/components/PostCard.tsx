@@ -1,7 +1,15 @@
 import Link from 'next/link';
 import styles from '../styles/components/PostCard.module.scss';
 
-function PostCard({ title, thumbnail, publishedAt, updatedAt, slug }) {
+type Props = {
+  title: string;
+  thumbnail: any;
+  publishedAt: string;
+  updatedAt: string;
+  slug: string;
+};
+
+const PostCard: React.FC<Props> = ({ title, thumbnail, publishedAt, updatedAt, slug }) => {
   return (
     <Link href={{ pathname: '/post/' + slug }} passHref={true}>
       <a className={styles['post-card--link']}>
@@ -25,6 +33,6 @@ function PostCard({ title, thumbnail, publishedAt, updatedAt, slug }) {
       </a>
     </Link>
   );
-}
+};
 
 export default PostCard;
