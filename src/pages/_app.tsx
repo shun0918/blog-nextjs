@@ -5,9 +5,9 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../styles/_app/destyle.css';
 import '../styles/_app/globals.scss';
-import type {AppProps} from 'next/app';
+import type { AppProps } from 'next/app';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   usePageView();
   const isTopPage = useRouter().pathname === '/';
   return (

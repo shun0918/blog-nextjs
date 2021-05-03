@@ -6,7 +6,7 @@ import PostCard from '../components/PostCard';
 import SectionHeader from '../components/SectionHeader';
 import styles from '../styles/pages/index.module.scss';
 
-export default function Index() {
+export default function Index(): JSX.Element {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     async function getPosts() {
@@ -32,15 +32,15 @@ export default function Index() {
           <div className={styles.posts__list}>
             {posts.length > 0
               ? posts.map((p) => (
-                  <PostCard
-                    key={p.fields.slug}
-                    title={p.fields.title}
-                    thumbnail={p.fields.thumbnail}
-                    publishedAt={p.fields.publishedAt}
-                    updatedAt={p.fields.updatedAt}
-                    slug={p.fields.slug}
-                  />
-                ))
+                <PostCard
+                  key={p.fields.slug}
+                  title={p.fields.title}
+                  thumbnail={p.fields.thumbnail}
+                  publishedAt={p.fields.publishedAt}
+                  updatedAt={p.fields.updatedAt}
+                  slug={p.fields.slug}
+                />
+              ))
               : null}
           </div>
         </section>

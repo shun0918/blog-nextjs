@@ -1,13 +1,15 @@
 import styles from '../styles/components/PostContent.module.scss';
-
+import { Post } from '../lib/contentful/contentful';
+import { Asset, EntryFields } from 'contentful'
+import { ReactNode } from 'react';
 type Props = {
-  title: string;
-  thumbnail: any;
-  body: any;
-  publishedAt: string;
-  updatedAt: string;
-  slug: string;
-};
+  title: EntryFields.Text;
+  thumbnail: Asset;
+  body: ReactNode;
+  publishedAt: EntryFields.Date;
+  updatedAt: EntryFields.Date;
+  slug: EntryFields.Text;
+}
 
 const PostContent: React.FC<Props> = ({ title, thumbnail, body, publishedAt, updatedAt, slug }) => {
   return (
