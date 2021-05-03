@@ -4,7 +4,7 @@ import Abstruct from '../components/Abstruct';
 import SectionHeader from '../components/SectionHeader';
 import styles from '../styles/pages/works.module.scss';
 
-export default function Works() {
+export default function Works(): JSX.Element {
   const [works, setWorks] = useState([]);
   useEffect(() => {
     async function getWorks() {
