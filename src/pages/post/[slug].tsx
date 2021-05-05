@@ -23,7 +23,6 @@ type Props = {
 
 const Slug = (props: Props): JSX.Element => {
   const body = _documentToReactComponents(props.post.fields.body as Document);
-  console.log(props.post.fields.body);
 
   return (
     <>
