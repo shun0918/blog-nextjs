@@ -19,10 +19,12 @@ type Props = {
   path: string;
   slug: string;
   description: string;
-  body: ReactNode;
 };
 
 const Slug = (props: Props): JSX.Element => {
+  const body = _documentToReactComponents(props.post.fields.body as Document);
+  console.log(props.post.fields.body);
+
   return (
     <>
       {'fields' in props.post ? (
@@ -39,7 +41,7 @@ const Slug = (props: Props): JSX.Element => {
           <PostContent
             title={props.post.fields.title}
             thumbnail={props.post.fields.thumbnail}
-            body={props.body}
+            body={body}
             publishedAt={props.post.fields.publishedAt}
             updatedAt={props.post.fields.updatedAt}
             slug={props.post.fields.slug}
@@ -55,7 +57,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const image = 'https:' + post.fields.thumbnail.fields.file.url;
   const path = '/post/' + params.slug;
   const description = parsePlainTextForDescription(post.fields.body);
-  const body = _documentToReactComponents(post.fields.body as Document);
 
   return {
     props: {
@@ -64,7 +65,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       path,
       slug: params.slug,
       description,
-      body,
     },
   };
 };
