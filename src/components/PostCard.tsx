@@ -1,15 +1,8 @@
 import Link from 'next/link';
+import { Post } from '../lib/contentful/contentful';
 import styles from '../styles/components/PostCard.module.scss';
 
-type Props = {
-  title: string;
-  thumbnail: any;
-  publishedAt: string;
-  updatedAt: string;
-  slug: string;
-};
-
-const PostCard: React.FC<Props> = ({ title, thumbnail, publishedAt, updatedAt, slug }) => {
+const PostCard: React.FC<Post> = ({ title, thumbnail, publishedAt, updatedAt, slug }) => {
   return (
     <Link href={{ pathname: '/post/' + slug }} passHref={true}>
       <a className={styles['post-card--link']}>

@@ -1,3 +1,7 @@
+import { ReactNode } from 'react';
+import { Entry } from 'contentful';
+import { _documentToReactComponents } from '../../lib/contentful/_documentToReactComponents';
+import { Document } from '@contentful/rich-text-types';
 import {
   fetchFieldCollection,
   fetchPostBySlug,
@@ -8,19 +12,17 @@ import PostContent from '../../components/PostContent';
 import Ogp from '../../components/Ogp';
 import styles from '../../styles/pages/post/[slug].module.scss';
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { _documentToReactComponents } from '../../lib/contentful/_documentToReactComponents';
-import { Entry } from 'contentful';
 
 type Props = {
-  post: any;
+  post: Entry<Post>;
   image: string;
   path: string;
   slug: string;
   description: string;
 };
 
-const Slug = (props: Props) => {
-  const body = _documentToReactComponents(props.post.fields.body);
+const Slug = (props: Props): JSX.Element => {
+  const body = _documentToReactComponents(props.post.fields.body as Document);
 
   return (
     <>
@@ -68,11 +70,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const slugs = await fetchFieldCollection('post', 'fields.slug');
-  const paths = slugs.map((slug: any) => ({
+  const paths = slugs.map((slug) => ({
     params: slug,
   }));
   console.log(paths);
   return { paths, fallback: 'blocking' };
-}
+};
 
 export default Slug;

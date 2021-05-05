@@ -6,7 +6,7 @@ import PostCard from '../components/PostCard';
 import SectionHeader from '../components/SectionHeader';
 import styles from '../styles/pages/index.module.scss';
 
-export default function Index() {
+export default function Index(): JSX.Element {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     async function getPosts() {
