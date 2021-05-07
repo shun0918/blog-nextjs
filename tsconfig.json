@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "sourceMap": true,
-    "noImplicitAny": true,
     "module": "esnext",
     "target": "es6",
     "jsx": "preserve",
@@ -13,6 +12,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
+    "noImplicitAny": true,
     // "strictNullChecks": true /* Enable strict null checks. */
     // "noUnusedLocals": true /* Report errors on unused locals. */
     // "noUnusedParameters": true /* Report errors on unused parameters. */
