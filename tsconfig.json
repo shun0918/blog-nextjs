@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "sourceMap": true,
-    "module": "esnext",
     "target": "es6",
-    "jsx": "preserve",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
+    "module": "esnext",
+    "jsx": "preserve",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
