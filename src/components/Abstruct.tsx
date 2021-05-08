@@ -1,4 +1,4 @@
-import styles from '../styles/components/Abstruct.module.scss';
+import styles from '~/styles/components/Abstruct.module.scss';
 
 type Props = {
   imagePath: string;

@@ -1,4 +1,4 @@
-import styles from '../styles/components/RoundIcon.module.scss';
+import styles from '~/styles/components/RoundIcon.module.scss';
 import Link from 'next/link';
 
 type Props = {

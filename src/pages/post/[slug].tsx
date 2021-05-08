@@ -1,17 +1,16 @@
-import { ReactNode } from 'react';
 import { Entry } from 'contentful';
-import { _documentToReactComponents } from '../../lib/contentful/_documentToReactComponents';
+import { _documentToReactComponents } from '~/lib/contentful/_documentToReactComponents';
 import { Document } from '@contentful/rich-text-types';
 import {
   fetchFieldCollection,
   fetchPostBySlug,
   parsePlainTextForDescription,
   Post,
-} from '../../lib/contentful/contentful';
-import PostContent from '../../components/PostContent';
-import Ogp from '../../components/Ogp';
-import styles from '../../styles/pages/post/[slug].module.scss';
-import { GetStaticProps, GetStaticPaths } from 'next';
+} from '~/lib/contentful/contentful';
+import PostContent from '~/components/PostContent';
+import Ogp from '~/components/Ogp';
+import styles from '~/styles/pages/post/[slug].module.scss';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
 type Props = {
   post: Entry<Post>;

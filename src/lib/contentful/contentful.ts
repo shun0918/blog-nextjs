@@ -1,5 +1,5 @@
 import Client from 'contentful';
-import Works from '../../pages/works';
+import Works from '~/pages/works';
 
 export interface Post {
   thumbnail: Client.Asset;

@@ -1,4 +1,4 @@
-import styles from '../styles/components/Profile.module.scss';
+import styles from '~/styles/components/Profile.module.scss';
 import RoundIcon from './RoundIcon';
 
 const Profile: React.FC = () => {
