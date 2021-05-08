@@ -1,5 +1,5 @@
-import styles from '~/styles/components/RoundIcon.module.scss';
 import Link from 'next/link';
+import styles from '~/styles/components/RoundIcon.module.scss';
 
 type Props = {
   href: string;

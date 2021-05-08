@@ -1,4 +1,4 @@
-import Profile from './Profile';
+import Profile from '~/components/Profile';
 import styles from '~/styles/components/FirstView.module.scss';
 
 const FirstView: React.FC = () => (

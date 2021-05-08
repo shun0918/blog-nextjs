@@ -1,5 +1,5 @@
 import styles from '~/styles/components/Profile.module.scss';
-import RoundIcon from './RoundIcon';
+import RoundIcon from '~/components/RoundIcon';
 
 const Profile: React.FC = () => {
   const icons = [
