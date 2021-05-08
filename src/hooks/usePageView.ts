@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import * as gtag from '~/lib/ga/gtag';
+import * as gtag from '~/lib/ga/ga';
 
 export default function usePageView(): void {
   const router = useRouter();
