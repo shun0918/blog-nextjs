@@ -1,0 +1,18 @@
+@import 'base/variables.scss';
+
+.ben {
+  @include shadow-bumps;
+  padding: 1rem;
+  border-radius: 70% 80% 50% 60%;
+  max-width:50%;
+  @include mq(md) {
+    max-width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  &__image {
+    border-radius: 70% 80% 50% 60%;
+    max-width:100%;
+    height: auto;
+  }
+}
