@@ -3,6 +3,7 @@ import { fetchAllPosts, parseImgUrl } from '~/lib/contentful/contentful';
 import Abstruct from '~/components/Abstruct';
 import SectionHeader from '~/components/SectionHeader';
 import styles from '~/styles/pages/works.module.scss';
+import Header from '~/components/Header';
 
 export default function Works(): JSX.Element {
   const [works, setWorks] = useState([]);
@@ -15,6 +16,7 @@ export default function Works(): JSX.Element {
   }, []);
   return (
     <>
+      <Header />
       <SectionHeader title="Works" />
       <ul className={styles.works}>
         {works.length > 0

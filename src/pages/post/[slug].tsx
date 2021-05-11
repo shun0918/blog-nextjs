@@ -5,12 +5,13 @@ import {
   fetchFieldCollection,
   fetchPostBySlug,
   parsePlainTextForDescription,
-  Post,
 } from '~/lib/contentful/contentful';
+import { Post } from '~/models/contentful/contentful';
 import PostContent from '~/components/PostContent';
 import Ogp from '~/components/Ogp';
 import styles from '~/styles/pages/post/[slug].module.scss';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Header from '~/components/Header';
 
 type Props = {
   post: Entry<Post>;
@@ -34,6 +35,7 @@ const Slug = (props: Props): JSX.Element => {
           path={props.path}
         />
       ) : null}
+      <Header />
       <main className={styles.main}>
         {'fields' in props.post ? (
           <PostContent

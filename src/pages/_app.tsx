@@ -9,7 +9,6 @@ import type { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   usePageView();
-  const isTopPage = useRouter().pathname === '/';
   return (
     <>
       <Head>
@@ -19,7 +18,6 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
           rel="stylesheet"
         />
       </Head>
-      {isTopPage ? null : <Header />}
       <Component {...pageProps} />
       <Footer />
     </>
