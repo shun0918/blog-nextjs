@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Post } from '~/lib/contentful/contentful';
+import { Post } from '~/models/contentful/contentful';
 import styles from '~/styles/components/PostCard.module.scss';
 
 const PostCard: React.FC<Post> = ({ title, thumbnail, publishedAt, updatedAt, slug }) => {
