@@ -1,5 +1,6 @@
-import styles from '../styles/components/Profile.module.scss';
-import RoundIcon from './RoundIcon';
+import styles from '~/styles/components/Profile.module.scss';
+import RoundIcon from '~/components/atoms/button/RoundIcon';
+import Ben from '~/components/atoms/icon/Ben'
 
 const Profile: React.FC = () => {
   const icons = [
@@ -22,15 +23,7 @@ const Profile: React.FC = () => {
   return (
     <>
       <div className={styles.profile}>
-        <div className={styles['profile__image-flame']}>
-          <img
-            src="/img/ben.png"
-            alt="うさぎのベン"
-            className={styles.profile__image}
-            width="500"
-            height="500"
-          />
-        </div>
+        <Ben size={500} />
         <div className={styles.profile__details}>
           <h2 className={styles.profile__title}>
             好きな技術は、

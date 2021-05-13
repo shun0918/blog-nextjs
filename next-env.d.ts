@@ -1,10 +1,9 @@
-declare module '*.css';
-declare module '*.scss';
-// declare module '*.module.scss';
+/// <reference types="next" />
+/// <reference types="next/types/global" />
 
 interface Window {
   gtag(type: 'config', googleAnalyticsId: string, { page_path: string });
-  gtag　(
+  gtag(
     type: 'event',
     eventAction: string,
     fieldObject: {

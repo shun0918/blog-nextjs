@@ -1,5 +1,5 @@
-import Profile from './Profile';
-import styles from '../styles/components/FirstView.module.scss';
+import Profile from '~/components/Profile';
+import styles from '~/styles/components/FirstView.module.scss';
 
 const FirstView: React.FC = () => (
   <header className={styles.firstview}>

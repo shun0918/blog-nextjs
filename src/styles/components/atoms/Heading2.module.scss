@@ -1,0 +1,10 @@
+&__title {
+  font-family: 'Osaka';
+  font-size: 3rem;
+  @include mq(lg){
+    font-size: 2.5rem;
+  }
+  @include mq(sm) {
+    font-size: 2rem;
+  }
+};

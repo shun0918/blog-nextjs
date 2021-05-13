@@ -1,4 +1,4 @@
-import styles from '../styles/components/SectionHeader.module.scss';
+import styles from '~/styles/components/SectionHeader.module.scss';
 
 type Props = {
   title: string;

@@ -1,4 +1,4 @@
-import { GA_TRACKING_ID } from '../lib/ga/gtag';
+import { GA_TRACKING_ID } from '~/lib/ga/ga';
 
 const Ga: React.FC = () => (
   <>

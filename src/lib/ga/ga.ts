@@ -1,4 +1,4 @@
-import { Event } from '../../types/ga/Event';
+import { Event } from '~/models/ga/ga';
 
 export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID || '';
 
