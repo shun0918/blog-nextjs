@@ -1,6 +1,7 @@
 const path = require('path');
+const withPWA = require('next-pwa');
 
-module.exports = {
+module.exports = withPWA({
   experimental: {
     optimizeFonts: true,
   },
@@ -18,4 +19,4 @@ module.exports = {
     dest: 'public',
     // runtimeCaching: []
   },
-};
+});
