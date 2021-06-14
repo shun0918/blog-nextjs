@@ -7,9 +7,9 @@ interface Window {
     type: 'event',
     eventAction: string,
     fieldObject: {
-      event_label: string
-      event_category: string
-      value?: string
+      event_label: string;
+      event_category: string;
+      value?: string;
     }
   );
 }
