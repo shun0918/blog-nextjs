@@ -2,7 +2,7 @@
     "name":             "Shun Bibo Roku",
     "short_name":       "shunbiboroku",
     "description":      "個人開発で得た知見を共有するブログです。",
-    "start_url":        "/",
+    "start_url":        "https://shunbiboroku.com/",
     "display":          "standalone",
     "orientation":      "any",
     "background_color": "#fff",
