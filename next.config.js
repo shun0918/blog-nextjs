@@ -1,17 +1,22 @@
 const path = require('path');
+const withPWA = require('next-pwa');
 
-module.exports = {
+module.exports = withPWA({
   experimental: {
     optimizeFonts: true,
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/styles')],
   },
-  webpack: config => {
+  webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
-      "~": path.resolve(__dirname, "./src")
+      '~': path.resolve(__dirname, './src'),
     };
-    return config
-  }
-}
+    return config;
+  },
+  pwa: {
+    dest: 'public',
+    // runtimeCaching: []
+  },
+});
