@@ -1,5 +1,5 @@
 import styles from '~/styles/components/PostContent.module.scss';
-import { Asset, EntryFields } from 'contentful'
+import { Asset, EntryFields } from 'contentful';
 import { ReactNode } from 'react';
 type Props = {
   title: EntryFields.Text;
@@ -8,9 +8,9 @@ type Props = {
   publishedAt: EntryFields.Date;
   updatedAt: EntryFields.Date;
   slug: EntryFields.Text;
-}
+};
 
-const PostContent: React.FC<Props> = ({ title, thumbnail, body, publishedAt, updatedAt, slug }) => {
+const PostContent: React.FC<Props> = ({ title, thumbnail, body, publishedAt }) => {
   return (
     <article className={styles.content}>
       <div className={styles.content__head}>
