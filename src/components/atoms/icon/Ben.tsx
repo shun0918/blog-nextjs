@@ -1,9 +1,8 @@
 import styles from '~/styles/components/Ben.module.scss';
 
 type Props = {
-  size?: number,
-}
-
+  size?: number;
+};
 
 const Ben: React.FC<Props> = ({ size = 500 }) => (
   <div className={styles.ben}>

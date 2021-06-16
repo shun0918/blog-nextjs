@@ -1,6 +1,5 @@
 import Client from 'contentful';
 import * as Types from '~/models/contentful/contentful';
-import Works from '~/pages/works';
 
 // tslint:disable-next-line:no-var-requires
 const contentfulClientApi = require('contentful');
@@ -51,12 +50,18 @@ function parsePostSlug({ fields }: Client.Entry<Types.Post>): { slug: Client.Ent
   };
 }
 
-function parsePostSlugEntries(entries: Client.EntryCollection<Types.ContentModels>, cb = parsePostSlug): { slug: Client.EntryFields.Text }[] {
+function parsePostSlugEntries(
+  entries: Client.EntryCollection<Types.ContentModels>,
+  cb = parsePostSlug,
+): { slug: Client.EntryFields.Text }[] {
   return entries?.items?.map(cb);
 }
 
 // 全てのpostのURLを取得
-export async function fetchFieldCollection(contentType: Types.CONTENT_TYPES, field: Types.Fields): Promise<{ slug: Client.EntryFields.Text }[]> {
+export async function fetchFieldCollection(
+  contentType: Types.CONTENT_TYPES,
+  field: Types.Fields,
+): Promise<{ slug: Client.EntryFields.Text }[]> {
   const entries: Client.EntryCollection<Types.ContentModels> = await client.getEntries({
     content_type: contentType,
     // postのslugの値を取得
