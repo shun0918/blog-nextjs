@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import * as TYPES from '@contentful/rich-text-types';
 import { Options, RenderNode, NodeRenderer } from '@contentful/rich-text-react-renderer';
 
@@ -46,7 +47,7 @@ export const options: Options = {
       return <p>{children}</p>;
     },
     // TODO:: TYPES.Node部分の型を厳密にする方法を検討
-    [TYPES.BLOCKS.EMBEDDED_ASSET]: (node: TYPES.Node, children: React.ReactNode) => {
+    [TYPES.BLOCKS.EMBEDDED_ASSET]: (node: TYPES.Node) => {
       const src = 'https:' + node.data.target.fields.file.url;
       const height = node.data.target.fields.file.details.height;
       const width = node.data.target.fields.file.details.width;
