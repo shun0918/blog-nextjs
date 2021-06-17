@@ -1,7 +1,5 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import usePageView from '~/hooks/usePageView';
-import Header from '~/components/Header';
 import Footer from '~/components/Footer';
 import '~/styles/_app/destyle.css';
 import '~/styles/_app/globals.scss';

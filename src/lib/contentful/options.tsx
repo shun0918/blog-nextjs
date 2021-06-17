@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 import * as TYPES from '@contentful/rich-text-types';
-import { Options, RenderNode, NodeRenderer } from '@contentful/rich-text-react-renderer';
+import { Options } from '@contentful/rich-text-react-renderer';
 
 const CodeBlock: React.FC = ({ children }) => (
   <div>

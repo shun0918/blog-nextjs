@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import Client from 'contentful';
 import * as Types from '~/models/contentful/contentful';
 
-// tslint:disable-next-line:no-var-requires
 const contentfulClientApi = require('contentful');
 const client: Client.ContentfulClientApi = contentfulClientApi.createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
@@ -73,7 +73,7 @@ export async function fetchFieldCollection(
 /**
  * リッチテキストからdescription用のプレーンテキストに変換
  */
-export function parsePlainTextForDescription(richText: Client.EntryFields.RichText) {
+export function parsePlainTextForDescription(richText: Client.EntryFields.RichText): string {
   return richText.content.reduce((acc, map) => {
     if (map.nodeType !== 'paragraph' || acc.length > maxDescriptionLength) {
       return acc;
@@ -91,6 +91,6 @@ function concatContentValue(content: Client.RichTextContent[]): string {
   }, '');
 }
 
-export function parseImgUrl(image: Client.Asset) {
+export function parseImgUrl(image: Client.Asset): string {
   return 'https:' + image.fields.file.url;
 }
