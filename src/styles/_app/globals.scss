@@ -1,9 +1,10 @@
 :root {
-  --c-body : #f4e2ca;
-  --c-primary: #FDF5F2;
+  --c-body: #f4e2ca;
+  --c-primary: #fdf5f2;
   --c-primary-darker: #d7d0ce;
   --c-primary-lighter: #ffffff;
   --c-primary-border: #f2f2f2;
+  --c-white: #ddd;
   --c-red: #db6565;
   --c-red-darker: #ba5656;
   --c-red-lighter: #fc7474;
@@ -15,14 +16,15 @@
   --c-text-a: #fc7474;
   --c-text-h: #555;
   --c-text-code: #fff;
-  --c-bg-code: #2E4C5F;
+  --c-bg-code: #2e4c5f;
   --c-text-blockquote: #555;
   --c-text-hr: #555;
   --c-text-h-border: #000;
-  --c-text-h-bg: #2E4C5F;
+  --c-text-h-bg: #2e4c5f;
   --font-damion: 'Damion', cursive;
-  --font-sans-serif: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  --font-code: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace,"Segoe UI Emoji";
+  --font-sans-serif: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo,
+    sans-serif;
+  --font-code: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace, 'Segoe UI Emoji';
 }
 
 html,
