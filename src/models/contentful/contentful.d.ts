@@ -39,4 +39,4 @@ export type WorksSelectFields =
   | 'fields.createdAt';
 export type Fields = PostSelectFields | WorksSelectFields;
 
-export { };
+export {};
