@@ -32,6 +32,9 @@ const RoundIcon: React.FC<Props> = ({ href, src, alt = '', width = '37', height 
           width={width}
           height={height}
         />
+        <div className={styles['roundicon__alt-wrapper']}>
+          <span className={styles.roundicon__alt}>{alt}</span>
+        </div>
       </div>
     </LinkTag>
   );
