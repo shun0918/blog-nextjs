@@ -15,6 +15,11 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
           href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap"
           rel="stylesheet"
         />
+        <script
+          data-ad-client="ca-pub-4145338195858150"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        />
       </Head>
       <Component {...pageProps} />
       <Footer />
