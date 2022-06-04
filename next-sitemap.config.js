@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+/** @type {import('next-sitemap').IConfig} */
 const config = {
   siteUrl: 'https://shunbiboroku.com',
   generateRobotsTxt: true, // (optional)
