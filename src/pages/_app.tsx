@@ -16,9 +16,9 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
           rel="stylesheet"
         />
         <script
-          data-ad-client="ca-pub-4145338195858150"
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4145338195858150"
+          crossOrigin="anonymous"
         />
       </Head>
       <Component {...pageProps} />
