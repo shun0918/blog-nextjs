@@ -1,8 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
-const config = {
+module.exports = {
   siteUrl: 'https://shunbiboroku.com',
   generateRobotsTxt: true, // (optional)
   // ...other options
 };
-
-export default config;
