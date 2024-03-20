@@ -2,9 +2,13 @@ import Link from 'next/link';
 import { Post } from '~/models/contentful/contentful';
 import styles from '~/styles/components/PostCard.module.scss';
 
-const PostCard: React.FC<Post> = ({ title, thumbnail, publishedAt, updatedAt, slug }) => {
+const PostCard: React.FC<Post> = ({ title, thumbnail, publishedAt, slug }) => {
   return (
-    <Link href={{ pathname: '/post/' + slug }} passHref={true} className={styles['post-card--link']}>
+    <Link
+      href={{ pathname: '/post/' + slug }}
+      passHref={true}
+      className={styles['post-card--link']}
+    >
       <div className={styles['post-card']}>
         <div className={styles['post-card__eyecatch']}>
           <img

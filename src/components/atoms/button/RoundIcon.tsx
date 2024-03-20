@@ -8,13 +8,12 @@ type Props = {
   alt: string;
   width: string;
   height: string;
-  children: ReactNode;
 };
 
 const RoundIcon: React.FC<Props> = ({ href, src, alt = '', width = '37', height = '37' }) => {
   const regex = /^https:\/\//;
   const isOtherSite = href.match(regex);
-  const LinkTag = ({ children }: { children: ReactNode}) =>
+  const LinkTag = ({ children }: { children: ReactNode }) =>
     isOtherSite ? (
       <a className={styles.roundicon__link} href={href}>
         {children}

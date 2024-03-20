@@ -1,7 +1,7 @@
 import Client, { FieldsType } from 'contentful';
 
 export interface Post extends FieldsType {
-  thumbnail: Client.Asset;
+  thumbnail: Client.Asset<undefined>;
   title: Client.EntryFields.Text;
   body?: Client.EntryFields.RichText;
   slug: Client.EntryFields.Text;
