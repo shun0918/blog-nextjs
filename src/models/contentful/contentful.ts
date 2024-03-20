@@ -1,5 +1,7 @@
-export interface Post {
-  thumbnail: Client.Asset;
+import Client, { FieldsType } from 'contentful';
+
+export interface Post extends FieldsType {
+  thumbnail: Client.Asset<undefined>;
   title: Client.EntryFields.Text;
   body?: Client.EntryFields.RichText;
   slug: Client.EntryFields.Text;
@@ -7,7 +9,7 @@ export interface Post {
   updatedAt: Client.EntryFields.Date;
 }
 
-export interface Works {
+export interface Works extends FieldsType {
   slug: Client.EntryFields.Text;
   image: Client.Asset;
   name: Client.EntryFields.Text;

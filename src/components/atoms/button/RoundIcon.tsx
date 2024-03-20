@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ReactNode } from 'react';
 import styles from '~/styles/components/RoundIcon.module.scss';
 
 type Props = {
@@ -12,16 +13,17 @@ type Props = {
 const RoundIcon: React.FC<Props> = ({ href, src, alt = '', width = '37', height = '37' }) => {
   const regex = /^https:\/\//;
   const isOtherSite = href.match(regex);
-  const LinkTag: React.FC = ({ children }) =>
+  const LinkTag = ({ children }: { children: ReactNode }) =>
     isOtherSite ? (
       <a className={styles.roundicon__link} href={href}>
         {children}
       </a>
     ) : (
-      <Link href={href}>
-        <a className={styles.roundicon__link}>{children}</a>
+      <Link href={href} className={styles.roundicon__link}>
+        {children}
       </Link>
     );
+
   return (
     <LinkTag>
       <div className={styles.roundicon}>

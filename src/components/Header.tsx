@@ -6,10 +6,8 @@ const Header: React.FC = () => (
     <div className={styles['grobal-nav']}>
       <div className={styles['grobal-nav__inner']}>
         <h1 className={styles['grobal-nav__logo']}>
-          <Link href="/">
-            <a className={styles['grobalnav__logo--link']}>
-              <span>Shun Bibo Roku</span>
-            </a>
+          <Link href="/" className={styles['grobalnav__logo--link']}>
+            <span>Shun Bibo Roku</span>
           </Link>
         </h1>
       </div>

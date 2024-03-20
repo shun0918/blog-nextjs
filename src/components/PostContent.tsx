@@ -3,7 +3,7 @@ import { Asset, EntryFields } from 'contentful';
 import { ReactNode } from 'react';
 type Props = {
   title: EntryFields.Text;
-  thumbnail: Asset;
+  thumbnail: Asset<undefined>;
   body: ReactNode;
   publishedAt: EntryFields.Date;
   updatedAt: EntryFields.Date;

@@ -1,4 +1,4 @@
-import { Entry } from 'contentful';
+import { Asset, Entry, EntrySkeletonType } from 'contentful';
 import { _documentToReactComponents } from '~/lib/contentful/_documentToReactComponents';
 import { Document } from '@contentful/rich-text-types';
 import {
@@ -14,7 +14,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Header from '~/components/Header';
 
 type Props = {
-  post: Entry<Post>;
+  post: Entry<EntrySkeletonType<Post, 'post'>, undefined, string>;
   image: string;
   path: string;
   slug: string;
@@ -53,8 +53,9 @@ const Slug = (props: Props): JSX.Element => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const post: Entry<Post> = await fetchPostBySlug(params.slug, 'post');
-  const image = 'https:' + post.fields.thumbnail.fields.file.url;
+  const post = await fetchPostBySlug(params.slug);
+  const field = post.fields.thumbnail as unknown as Asset;
+  const image = 'https:' + field.fields.file.url;
   const path = '/post/' + params.slug;
   const description = parsePlainTextForDescription(post.fields.body);
 
