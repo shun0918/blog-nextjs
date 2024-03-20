@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { Block, Inline, Text } from '@contentful/rich-text-types';
-import Client, {  createClient } from 'contentful';
+import Client, { createClient, EntrySkeletonType } from 'contentful';
 import * as Types from '~/models/contentful/contentful';
-const contentful = require('contentful')
+// const contentful = require('contentful')
 
-const client = contentful.createClient({
+const client = createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });
@@ -14,10 +14,7 @@ const maxDescriptionLength = 100;
 /**
  * 全てのpostを取得
  */
-export async function fetchAllPosts(
-  contentType: Types.CONTENT_TYPES,
-  orderBy?: Types.OrderBy,
-): Promise<Client.Entry<Types.ContentModels>[]> {
+export async function fetchAllPosts(contentType: Types.CONTENT_TYPES, orderBy?: Types.OrderBy) {
   const entries = await client.getEntries({
     content_type: contentType,
     order: [orderBy],
@@ -29,12 +26,9 @@ export async function fetchAllPosts(
 }
 
 // URLごとにpostを取得
-export async function fetchPostBySlug(
-  slug: string | string[],
-  contentType: Types.CONTENT_TYPES,
-) {
-  const entries: Client.EntryCollection<Types.Post> = await client.getEntries({
-    content_type: contentType,
+export async function fetchPostBySlug(slug: string | string[]) {
+  const entries = await client.getEntries<EntrySkeletonType<Types.Post, 'post'>>({
+    content_type: 'post',
     // 取得データの数
     limit: 1,
     // slugの値が引数slugと等しいpostを取得
@@ -43,28 +37,29 @@ export async function fetchPostBySlug(
   if (entries.items.length > 0) {
     return entries.items[0];
   }
-  console.log(`Error getting Entries for ${contentType}.`);
+  console.log(`Error getting Entries for post`);
 }
 
-function parsePostSlug({ fields }: Client.Entry<Types.Post>) {
+function parsePostSlug({ fields }: Client.Entry<EntrySkeletonType<Types.Post>>) {
   return {
-    slug: fields.slug as string, // TODO: マシなコードにする
+    slug: fields.slug as unknown as string,
   };
 }
 
 function parsePostSlugEntries(
-  entries: Client.EntryCollection<Types.ContentModels>,
+  entries: Client.EntryCollection<
+    Client.EntrySkeletonType<Types.Post, Types.CONTENT_TYPES>,
+    undefined,
+    string
+  >,
   cb = parsePostSlug,
 ): { slug: Client.EntryFields.Text }[] {
   return entries?.items?.map(cb);
 }
 
 // 全てのpostのURLを取得
-export async function fetchFieldCollection(
-  contentType: Types.CONTENT_TYPES,
-  field: Types.Fields,
-) {
-  const entries: Client.EntryCollection<Types.ContentModels> = await client.getEntries({
+export async function fetchFieldCollection(contentType: Types.CONTENT_TYPES, field: Types.Fields) {
+  const entries = await client.getEntries<EntrySkeletonType<Types.Post, Types.CONTENT_TYPES>>({
     content_type: contentType,
     // postのslugの値を取得
     select: [field],
