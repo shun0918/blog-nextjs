@@ -1,4 +1,6 @@
-export interface Post {
+import Client, { EntrySkeletonType } from 'contentful';
+
+export interface Post extends EntrySkeletonType {
   thumbnail: Client.Asset;
   title: Client.EntryFields.Text;
   body?: Client.EntryFields.RichText;
@@ -7,7 +9,7 @@ export interface Post {
   updatedAt: Client.EntryFields.Date;
 }
 
-export interface Works {
+export interface Works  extends EntrySkeletonType {
   slug: Client.EntryFields.Text;
   image: Client.Asset;
   name: Client.EntryFields.Text;
