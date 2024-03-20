@@ -1,19 +1,20 @@
 /* eslint-disable react/display-name */
 import * as TYPES from '@contentful/rich-text-types';
 import { Options } from '@contentful/rich-text-react-renderer';
+import { ReactNode } from 'react';
 
-const CodeBlock: React.FC = ({ children }) => (
+const CodeBlock = ({ children }: { children: ReactNode}) => (
   <div>
     <pre>{children}</pre>
   </div>
 );
 //記事はHeading3から始まるようにする。 5以降はContentful側で使用不可能にしている。
-const H1: React.FC = ({ children }) => <h3>{children}</h3>;
-const H2: React.FC = ({ children }) => <h4>{children}</h4>;
-const H3: React.FC = ({ children }) => <h5>{children}</h5>;
-const H4: React.FC = ({ children }) => <h6>{children}</h6>;
-const H5: React.FC = ({ children }) => <p>{children}</p>;
-const H6: React.FC = ({ children }) => <p>{children}</p>;
+const H1 = ({ children }: { children: ReactNode}) => <h3>{children}</h3>;
+const H2 = ({ children }: { children: ReactNode}) => <h4>{children}</h4>;
+const H3 = ({ children }: { children: ReactNode}) => <h5>{children}</h5>;
+const H4 = ({ children }: { children: ReactNode}) => <h6>{children}</h6>;
+const H5 = ({ children }: { children: ReactNode}) => <p>{children}</p>;
+const H6 = ({ children }: { children: ReactNode}) => <p>{children}</p>;
 
 export const options: Options = {
   renderNode: {
